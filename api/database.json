@@ -155,12 +155,11 @@
         }
     ],
     "locationDrinks": [
-        // BEGINNING OF 4TH AVENUE DRINKS SEE LOCATIONID
         { 
             "id": 1,
             "locationId": 1,
             "drinkId": 1,
-            "drinkQty": 
+            "drinkQty": 999
         },
         {
             "id": 2,
@@ -186,8 +185,7 @@
             "drinkId": 5,
             "drinkQty": 999 
         },
-        //   END OF 4TH AVENUE DRINKS
-        // BEGINNING OF MARSHALL STADIUM DRINKS -- SEE LOCATIONID
+
         {
             "id": 6,
             "locationId": 2,
@@ -218,8 +216,6 @@
             "drinkId": 5,
             "drinkQty": 999 
         },
-        //   END OF MARSHALL STADIUM DRINKS
-        // BEGINNING OF HILLBILLY HOTDOGS DRINKS -- SEE LOCATIONID
         {
             "id": 11,
             "locationId": 3,
@@ -250,8 +246,6 @@
             "drinkId": 5,
             "drinkQty": 999 
         },
-        //   END OF HILLBILLY HOTDOGS DRINKS
-        // BEGINNING OF SPRINGHILL CEMETERY DRINKS -- SEE LOCATIONID
         {
             "id": 16,
             "locationId": 4,
@@ -281,11 +275,10 @@
             "locationId": 4,
             "drinkId": 5,
             "drinkQty": 999 
-        },
-        // END OF LOCATION DRINKS
+        }
     ],
     "locationDesserts": [
-        // BEGINNING OF 4TH AVENUE DESSERTS SEE LOCATIONID
+
         { 
             "id": 1,
             "locationId": 1,
@@ -316,8 +309,7 @@
             "dessertId": 5,
             "dessertQty": 999 
         },
-        //   END OF 4TH AVENUE DESSERTS
-        // BEGINNING OF MARSHALL STADIUM DESSERTS -- SEE LOCATIONID
+
         {
             "id": 6,
             "locationId": 2,
@@ -348,8 +340,7 @@
             "dessertId": 5,
             "dessertQty": 999 
         },
-        //   END OF MARSHALL STADIUM DESSERTS
-        // BEGINNING OF HILLBILLY HOTDOGS DESSERTS -- SEE LOCATIONID
+
         {
             "id": 11,
             "locationId": 3,
@@ -380,8 +371,7 @@
             "dessertId": 5,
             "dessertQty": 999 
         },
-        //   END OF HILLBILLY HOTDOGS DESSERTS
-        // BEGINNING OF SPRINGHILL CEMETERY DESSERTS -- SEE LOCATIONID
+
         {
             "id": 16,
             "locationId": 4,
@@ -411,11 +401,10 @@
             "locationId": 4,
             "dessertId": 5,
             "dessertQty": 999 
-        },
-        // END OF LOCATION DESSERTS
+        }
     ],
     "locationDogs": [
-        // BEGINNING OF 4TH AVENUE DOGS SEE LOCATIONID
+
         { 
             "id": 1,
             "locationId": 1,
@@ -446,8 +435,7 @@
             "hotDogId": 5,
             "hotDogQty": 999 
         },
-        //   END OF 4TH AVENUE DOGS
-        // BEGINNING OF MARSHALL STADIUM DOGS -- SEE LOCATIONID
+
         {
             "id": 6,
             "locationId": 2,
@@ -478,8 +466,7 @@
             "hotDogId": 6,
             "hotDogQty": 999 
         },
-        //   END OF MARSHALL STADIUM DOGS
-        // BEGINNING OF HILLBILLY HOTDOGS DOGS -- SEE LOCATIONID
+
         {
             "id": 11,
             "locationId": 3,
@@ -510,8 +497,7 @@
             "hotDogId": 7,
             "hotDogQty": 999 
         },
-        //   END OF HILLBILLY HOTDOGS DOGS
-        // BEGINNING OF SPRINGHILL CEMETERY DOGS -- SEE LOCATIONID
+
         {
             "id": 16,
             "locationId": 4,
@@ -541,16 +527,15 @@
             "locationId": 4,
             "hotDogId": 8,
             "hotDogQty": 999 
-        },
-        // END OF LOCATION DOGS
+        }
     ],
     "orders": [
         {
-            "id": ,
-            "locationId": ,
-            "hotdogID": ,
-            "drinkId": ,
-            "dessertId": 
+            "id": 1,
+            "locationId": 1,
+            "hotdogID": 1,
+            "drinkId": 1,
+            "dessertId": 1 
         }
 
     ]
