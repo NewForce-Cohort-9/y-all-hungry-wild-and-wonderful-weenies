@@ -25,66 +25,66 @@
         {
             "id": 1,
             "name": "",
-            "price": ,
-            "image": ,
+            "price": 2.50,
+            "image": "https://example.com/image.jpg",
             "description": "",
-            "quantity": ,
+            "quantity": 1
           },
           {
             "id": 2,
             "name": "",
-            "price": ,
-            "image": ,
+            "price": 2.50,
+            "image": "https://example.com/image.jpg",
             "description": "",
-            "quantity": ,
+            "quantity": 1
           },
           {
             "id": 3,
             "name": "",
-            "price": ,
-            "image": ,
+            "price": 2.50,
+            "image": "https://example.com/image.jpg",
             "description": "",
-            "quantity": ,
+            "quantity": 1
           },
           {
             "id": 4,
             "name": "",
-            "price": ,
-            "image": ,
+            "price": 2.50,
+            "image": "https://example.com/image.jpg",
             "description": "",
-            "quantity": ,
+            "quantity": 1
           },
           {
             "id": 5,
             "name": "",
-            "price": ,
-            "image": ,
+            "price": 2.50,
+            "image": "https://example.com/image.jpg",
             "description": "",
-            "quantity": ,
+            "quantity": 1
           },
           {
             "id": 6,
             "name": "",
-            "price": ,
-            "image": ,
+            "price": 2.50,
+            "image": "https://example.com/image.jpg",
             "description": "",
-            "quantity": ,
+            "quantity": 1
           },
           {
             "id": 7,
             "name": "",
-            "price": ,
-            "image": ,
+            "price": 2.50,
+            "image": "https://example.com/image.jpg",
             "description": "",
-            "quantity": ,
+            "quantity": 1
           },
           {
             "id": 7,
             "name": "",
-            "price": ,
-            "image": ,
+            "price": 2.50,
+            "image": "https://example.com/image.jpg",
             "description": "",
-            "quantity": ,
+            "quantity": 1
           }
           
 
@@ -93,50 +93,50 @@
         {
             "id": 1,
             "name": "",
-            "price": ,
-            "image": ,
+            "price": 1.00,
+            "image": "https://example.com/image.jpg",
             "description": "",
-            "quantity": ,
+            "quantity": 1
           },
           {
             "id": 2,
             "name": "",
-            "price": ,
-            "image": ,
+            "price": 1.00,
+            "image": "https://example.com/image.jpg",
             "description": "",
-            "quantity": ,
+            "quantity": 1
           },
           {
             "id": 3,
             "name": "",
-            "price": ,
-            "image": ,
+            "price": 1.00,
+            "image": "https://example.com/image.jpg",
             "description": "",
-            "quantity": ,
+            "quantity": 1
           },
           {
             "id": 4,
             "name": "",
-            "price": ,
-            "image": ,
+            "price": 1.00,
+            "image": "https://example.com/image.jpg",
             "description": "",
-            "quantity": ,
+            "quantity": 1
           },
           {
             "id": 5,
             "name": "",
-            "price": ,
-            "image": ,
+            "price": 1.00,
+            "image": "https://example.com/image.jpg",
             "description": "",
-            "quantity": ,
+            "quantity": 1
           },
           {
             "id": 6,
             "name": "",
-            "price": ,
-            "image": ,
+            "price": 1.00,
+            "image": "https://example.com/image.jpg",
             "description": "",
-            "quantity": ,
+            "quantity": 1
           }
 
     ],
@@ -144,66 +144,66 @@
         {
             "id": 1,
             "name": "",
-            "price": ,
-            "image": ,
+            "price": 3.00,
+            "image": "https://example.com/image.jpg",
             "description": "",
-            "quantity": ,
+            "quantity": 1
           },
           {
             "id": 2,
             "name": "",
-            "price": ,
-            "image": ,
+            "price": 3.00,
+            "image": "https://example.com/image.jpg",
             "description": "",
-            "quantity": ,
+            "quantity": 1
           },
           {
             "id": 3,
             "name": "",
-            "price": ,
-            "image": ,
+            "price": 3.00,
+            "image": "https://example.com/image.jpg",
             "description": "",
-            "quantity": ,
+            "quantity": 1
           },
           {
             "id": 4,
             "name": "",
-            "price": ,
-            "image": ,
+            "price": 3.00,
+            "image": "https://example.com/image.jpg",
             "description": "",
-            "quantity": ,
+            "quantity": 1
           },
           {
             "id": 5,
             "name": "",
-            "price": ,
-            "image": ,
+            "price": 3.00,
+            "image": "https://example.com/image.jpg",
             "description": "",
-            "quantity": ,
+            "quantity": 1
           },
           {
             "id": 6,
             "name": "",
-            "price": ,
-            "image": ,
+            "price": 3.00,
+            "image": "https://example.com/image.jpg",
             "description": "",
-            "quantity": ,
+            "quantity": 1
           },
           {
             "id": 7,
             "name": "",
-            "price": ,
-            "image": ,
+            "price": 3.00,
+            "image": "https://example.com/image.jpg",
             "description": "",
-            "quantity": ,
+            "quantity": 1
           },
           {
             "id": 7,
             "name": "",
-            "price": ,
-            "image": ,
+            "price": 3.00,
+            "image": "https://example.com/image.jpg",
             "description": "",
-            "quantity": ,
+            "quantity": 1
           }
         
     ],
@@ -211,66 +211,66 @@
         {
             "id": 1,
             "name": "",
-            "price": ,
-            "image": ,
+            "price": 1.00,
+            "image": "https://example.com/image.jpg",
             "description": "",
-            "quantity": ,
+            "quantity": 1
           },
           {
             "id": 2,
             "name": "",
-            "price": ,
-            "image": ,
+            "price": 1.00,
+            "image": "https://example.com/image.jpg",
             "description": "",
-            "quantity": ,
+            "quantity": 1
           },
           {
             "id": 3,
             "name": "",
-            "price": ,
-            "image": ,
+            "price": 1.00,
+            "image": "https://example.com/image.jpg",
             "description": "",
-            "quantity": ,
+            "quantity": 1
           },
           {
             "id": 4,
             "name": "",
-            "price": ,
-            "image": ,
+            "price": 1.00,
+            "image": "https://example.com/image.jpg",
             "description": "",
-            "quantity": ,
+            "quantity": 1
           },
           {
             "id": 5,
             "name": "",
-            "price": ,
-            "image": ,
+            "price": 1.00,
+            "image": "https://example.com/image.jpg",
             "description": "",
-            "quantity": ,
+            "quantity": 1
           },
           {
             "id": 6,
             "name": "",
-            "price": ,
-            "image": ,
+            "price": 1.00,
+            "image": "https://example.com/image.jpg",
             "description": "",
-            "quantity": ,
+            "quantity": 1
           },
           {
             "id": 7,
             "name": "",
-            "price": ,
-            "image": ,
+            "price": 1.00,
+            "image": "https://example.com/image.jpg",
             "description": "",
-            "quantity": ,
+            "quantity": 1
           },
           {
             "id": 7,
             "name": "",
-            "price": ,
-            "image": ,
+            "price": 1.00,
+            "image": "https://example.com/image.jpg",
             "description": "",
-            "quantity": ,
+            "quantity": 1
           }
      ]
 }
