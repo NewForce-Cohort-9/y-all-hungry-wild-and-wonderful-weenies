@@ -1,6 +1,276 @@
 {
-    "locations": [],
-    "foods": [],
-    "drinks": [],
-    "desserts": []
+    "locations": [
+        {
+            "id": 1,
+            "name": "",
+            "address": ""
+          },
+          {
+            "id": 2,
+            "name": "",
+            "address": ""
+          },
+          {
+            "id": 3,
+            "name": "",
+            "address": ""
+          },
+          {
+            "id": 4,
+            "name": "",
+            "address": ""
+          }
+    ],
+    "food": [
+        {
+            "id": 1,
+            "name": "",
+            "price": ,
+            "image": ,
+            "description": "",
+            "quantity": ,
+          },
+          {
+            "id": 2,
+            "name": "",
+            "price": ,
+            "image": ,
+            "description": "",
+            "quantity": ,
+          },
+          {
+            "id": 3,
+            "name": "",
+            "price": ,
+            "image": ,
+            "description": "",
+            "quantity": ,
+          },
+          {
+            "id": 4,
+            "name": "",
+            "price": ,
+            "image": ,
+            "description": "",
+            "quantity": ,
+          },
+          {
+            "id": 5,
+            "name": "",
+            "price": ,
+            "image": ,
+            "description": "",
+            "quantity": ,
+          },
+          {
+            "id": 6,
+            "name": "",
+            "price": ,
+            "image": ,
+            "description": "",
+            "quantity": ,
+          },
+          {
+            "id": 7,
+            "name": "",
+            "price": ,
+            "image": ,
+            "description": "",
+            "quantity": ,
+          },
+          {
+            "id": 7,
+            "name": "",
+            "price": ,
+            "image": ,
+            "description": "",
+            "quantity": ,
+          }
+          
+
+    ],
+    "drinks": [
+        {
+            "id": 1,
+            "name": "",
+            "price": ,
+            "image": ,
+            "description": "",
+            "quantity": ,
+          },
+          {
+            "id": 2,
+            "name": "",
+            "price": ,
+            "image": ,
+            "description": "",
+            "quantity": ,
+          },
+          {
+            "id": 3,
+            "name": "",
+            "price": ,
+            "image": ,
+            "description": "",
+            "quantity": ,
+          },
+          {
+            "id": 4,
+            "name": "",
+            "price": ,
+            "image": ,
+            "description": "",
+            "quantity": ,
+          },
+          {
+            "id": 5,
+            "name": "",
+            "price": ,
+            "image": ,
+            "description": "",
+            "quantity": ,
+          },
+          {
+            "id": 6,
+            "name": "",
+            "price": ,
+            "image": ,
+            "description": "",
+            "quantity": ,
+          }
+
+    ],
+    "desserts": [
+        {
+            "id": 1,
+            "name": "",
+            "price": ,
+            "image": ,
+            "description": "",
+            "quantity": ,
+          },
+          {
+            "id": 2,
+            "name": "",
+            "price": ,
+            "image": ,
+            "description": "",
+            "quantity": ,
+          },
+          {
+            "id": 3,
+            "name": "",
+            "price": ,
+            "image": ,
+            "description": "",
+            "quantity": ,
+          },
+          {
+            "id": 4,
+            "name": "",
+            "price": ,
+            "image": ,
+            "description": "",
+            "quantity": ,
+          },
+          {
+            "id": 5,
+            "name": "",
+            "price": ,
+            "image": ,
+            "description": "",
+            "quantity": ,
+          },
+          {
+            "id": 6,
+            "name": "",
+            "price": ,
+            "image": ,
+            "description": "",
+            "quantity": ,
+          },
+          {
+            "id": 7,
+            "name": "",
+            "price": ,
+            "image": ,
+            "description": "",
+            "quantity": ,
+          },
+          {
+            "id": 7,
+            "name": "",
+            "price": ,
+            "image": ,
+            "description": "",
+            "quantity": ,
+          }
+        
+    ],
+    "happyToy": [
+        {
+            "id": 1,
+            "name": "",
+            "price": ,
+            "image": ,
+            "description": "",
+            "quantity": ,
+          },
+          {
+            "id": 2,
+            "name": "",
+            "price": ,
+            "image": ,
+            "description": "",
+            "quantity": ,
+          },
+          {
+            "id": 3,
+            "name": "",
+            "price": ,
+            "image": ,
+            "description": "",
+            "quantity": ,
+          },
+          {
+            "id": 4,
+            "name": "",
+            "price": ,
+            "image": ,
+            "description": "",
+            "quantity": ,
+          },
+          {
+            "id": 5,
+            "name": "",
+            "price": ,
+            "image": ,
+            "description": "",
+            "quantity": ,
+          },
+          {
+            "id": 6,
+            "name": "",
+            "price": ,
+            "image": ,
+            "description": "",
+            "quantity": ,
+          },
+          {
+            "id": 7,
+            "name": "",
+            "price": ,
+            "image": ,
+            "description": "",
+            "quantity": ,
+          },
+          {
+            "id": 7,
+            "name": "",
+            "price": ,
+            "image": ,
+            "description": "",
+            "quantity": ,
+          }
+     ]
 }
