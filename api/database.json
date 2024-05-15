@@ -84,36 +84,36 @@
       "id": 1,
       "name": "Cola",
       "price": 2.99,
-      "image": "url",
+      "image": "images/AdobeStock_431460733.jpeg",
       "description": "Fountain Drink"
     },
     {
       "id": 2,
       "name": "Diet Cola",
       "price": 2.99,
-      "image": "url",
+      "image": "images/AdobeStock_487941217.jpeg",
       "description": "Fountain Drink"
     },
     {
       "id": 3,
       "name": "Sweet Tea",
       "price": 3.29,
-      "image": "url",
-      "description": "House"
+      "image": "images/AdobeStock_107020850.jpeg",
+      "description": "Made Fresh Daily"
     },
     {
       "id": 4,
       "name": "Lemonade",
       "price": 3.29,
-      "image": "url",
-      "description": "House"
+      "image": "images/charity-beth-long-_PaXoN4_2s0-unsplash.jpg",
+      "description": "Made Fresh Daily"
     },
     {
       "id": 5,
       "name": "Milk",
       "price": 3.29,
-      "image": "url",
-      "description": "Carton"
+      "image": "images/mae-mu-ru4jyDiLHsI-unsplash.jpg",
+      "description": "Bottle"
     }
   ],
   "desserts": [
