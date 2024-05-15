@@ -3,6 +3,7 @@ export const transientState = {
   foodId: 0,
   locationId: 0,
   drinkId: 0,
+  dessertId: 0
 };
 
 //reset "state" to defaults
