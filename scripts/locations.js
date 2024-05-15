@@ -4,7 +4,7 @@ import { setLocation, transientState } from "./transientState.js";
 
 export const getLocations = async () => {
   try {
-    const response = await fetch(`http://localhost:8088/locations`);
+    const response = await fetch(`http://localhost:8080/locations`);
     if (response.ok) {
       const locations = await response.json();
       return locations;

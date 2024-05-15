@@ -1,5 +1,5 @@
 import { DrinkSelector } from "./drinks.js";
-import { LocationSelector } from "./locations.js";
+import { LocationSelector, LocationHeader } from "./locations.js";
 
 const mainContainer = document.querySelector("#main-container");
 
@@ -10,7 +10,9 @@ const dessertContainer = document.querySelector(".dessert");
 
 const render = async () => {
   const locationSelectHTML = await LocationSelector();
-  locationContainer.innerHTML = locationSelectHTML;
+  const locationHeaderHTML = await LocationHeader();
+  locationContainer.innerHTML += locationSelectHTML;
+  locationContainer.innerHTML += locationHeaderHTML;
 };
 
 render();
