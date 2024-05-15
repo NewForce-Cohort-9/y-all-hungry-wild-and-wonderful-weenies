@@ -18,7 +18,6 @@ export const getLocations = async () => {
 };
 
 export const getMenuItemsByLocation = async (locationId) => {
-  console.log("l", locationId);
   try {
     const foodResponse = await fetch("http://localhost:8088/locationDogs");
     const drinkResponse = await fetch("http://localhost:8088/locationDrinks");
@@ -48,7 +47,6 @@ export const getMenuItemsByLocation = async (locationId) => {
     }
     return null;
   } catch (error) {
-    console.error("error", error);
     return null;
   }
 };
