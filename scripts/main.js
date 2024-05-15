@@ -1,3 +1,4 @@
+import { DessertDropdown } from "./desserts.js";
 import { DrinkSelector } from "./drinks.js";
 import { HotDogDropdown } from "./hotdogs.js";
 import { LocationSelector } from "./locations.js";
@@ -19,3 +20,4 @@ render();
 locationContainer.innerHTML = LocationSelector();
 drinkContainer.innerHTML = await DrinkSelector();
 foodContainer.innerHTML = await HotDogDropdown();
+dessertContainer.innerHTML = await DessertDropdown();
