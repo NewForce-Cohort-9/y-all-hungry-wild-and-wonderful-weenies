@@ -16,9 +16,12 @@ export const resetAllState = () => {
 export const setFood = (chosenFoodId) => {
   transientState.foodId = chosenFoodId;
   console.log(transientState);
+
+  const chosenLocation = transientState.locationId;
+  console.log("chosen location", chosenLocation);
 };
 
-export const setLocation = (locationId) => {
+export const setLocation = async (locationId) => {
   transientState.locationId = locationId;
 };
 
