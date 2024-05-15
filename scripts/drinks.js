@@ -12,5 +12,5 @@ export const DrinkSelector = async () => {
     drinkHTML += divStringArray.join("")
     drinkHTML += `</select>`
 
-    return drinkHTML   
+    return drinkHTML
 }

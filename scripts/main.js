@@ -14,5 +14,3 @@ ${drinkContainer}
 
 locationContainer.innerHTML = LocationSelector();
 drinkContainer.innerHTML = await DrinkSelector();
-
-render()
