@@ -19,5 +19,4 @@ const drinkHTML = `
 ${drinkContainer}
 `;
 
-locationContainer.innerHTML = LocationSelector();
 drinkContainer.innerHTML = await DrinkSelector();

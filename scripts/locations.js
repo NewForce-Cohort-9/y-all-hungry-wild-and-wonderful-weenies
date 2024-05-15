@@ -1,13 +1,16 @@
+import { setLocation, transientState } from "./transientState.js";
+
+//TODO - finish styling
+
 export const getLocations = async () => {
   try {
-    const response = await fetch(`http://localhost:8080/locations`);
+    const response = await fetch(`http://localhost:8088/locations`);
     if (response.ok) {
       const locations = await response.json();
       return locations;
     }
     return null;
   } catch (error) {
-    console.error("error", error);
     return null;
   }
 };
@@ -31,34 +34,21 @@ export const LocationSelector = async () => {
   return locationOptionsHTML;
 };
 
-// import { setInterior } from "./TransientState.js";
+export const LocationHeader = async () => {
+  //TODO - finish this
+  const locations = await getLocations();
 
-// export const Interiors = async () => {
-//   const response = await fetch("http://localhost:8088/interior");
-//   const options = await response.json();
+  if (!locations) return `<span>Failed to fetch locations</span>`;
 
-//   let optionsHTML = "<h2>Interiors</h2>";
-//   optionsHTML += `<select id="interior">`;
-//   optionsHTML += `<option value="0">Select interior style</option>`;
+  return `<h1 class="text-center text-dark">
+  You're picking up from the TODO name
+  </h1>`;
+};
 
-//   const divStringArray = options.map((item) => {
-//     return `
-//       <div>
-//       <option value="${item.id}">${item.style}</option>
-//       </div>
-//       `;
-//   });
+const handleLocationSelection = (e) => {
+  if (e.target.id === "locations-select") {
+    setLocation(Number(e.target.value));
+  }
+};
 
-//   optionsHTML += divStringArray.join("");
-//   optionsHTML += "</select>";
-
-//   return optionsHTML;
-// };
-
-// const handleInteriorChoice = (e) => {
-//   if (e.target.id === "interior") {
-//     setInterior(parseInt(e.target.value));
-//   }
-// };
-
-// document.addEventListener("change", handleInteriorChoice);
+document.addEventListener("change", handleLocationSelection);
