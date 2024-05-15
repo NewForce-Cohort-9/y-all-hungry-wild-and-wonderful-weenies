@@ -11,8 +11,10 @@ const dessertContainer = document.querySelector(".dessert");
 const render = async () => {
   const locationSelectHTML = await LocationSelector();
   locationContainer.innerHTML = locationSelectHTML;
-  const drinkHTML = await DrinkSelector()
-  drinkContainer.innerHTML = drinkHTML
 };
 
 render();
+
+locationContainer.innerHTML = LocationSelector();
+drinkContainer.innerHTML = await DrinkSelector();
+foodContainer.innerHTML = await HotDogDropdown();
