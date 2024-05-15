@@ -1,6 +1,7 @@
 import { DessertDropdown } from "./desserts.js";
 import { DrinkSelector } from "./drinks.js";
 import { HotDogDropdown } from "./hotdogs.js";
+import { HotDogMenu } from "./menu.js";
 import { LocationSelector } from "./locations.js";
 
 const mainContainer = document.querySelector("#main-container");
