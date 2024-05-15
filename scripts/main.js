@@ -17,10 +17,6 @@ const render = async () => {
 
 render();
 
-const drinkHTML = `
-${drinkContainer}
-`;
-
 locationContainer.innerHTML = LocationSelector();
 drinkContainer.innerHTML = await DrinkSelector();
 foodContainer.innerHTML = await HotDogDropdown();
