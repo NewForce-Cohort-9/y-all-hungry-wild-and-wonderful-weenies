@@ -1,11 +1,12 @@
 import { DessertDropdown } from "./desserts.js";
 import { DrinkSelector } from "./drinks.js";
+import { LocationSelector, LocationHeader } from "./locations.js";
 import { HotDogDropdown } from "./hotdogs.js";
-import { LocationSelector } from "./locations.js";
 
 const mainContainer = document.querySelector("#main-container");
 
 const locationContainer = document.querySelector(".location");
+const locationHeaderBox = document.querySelector("#location-header-box");
 const foodContainer = document.querySelector(".food");
 const drinkContainer = document.querySelector(".drink");
 const dessertContainer = document.querySelector(".dessert");
@@ -15,11 +16,17 @@ const render = async () => {
   locationContainer.innerHTML = locationSelectHTML;
 };
 
-render();
+const renderLocationHeader = async () => {
+  const locationHeaderHTML = await LocationHeader();
+  locationHeaderBox.innerHTML = locationHeaderHTML;
+};
 
-const drinkHTML = `
-${drinkContainer}
-`;
+render();
+renderLocationHeader();
+
+document.addEventListener("locationStateChange", () => {
+  renderLocationHeader();
+});
 
 locationContainer.innerHTML = LocationSelector();
 drinkContainer.innerHTML = await DrinkSelector();

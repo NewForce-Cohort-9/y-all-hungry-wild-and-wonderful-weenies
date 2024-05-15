@@ -2,6 +2,8 @@ import { setLocation, transientState } from "./transientState.js";
 
 //TODO - finish styling
 
+const locationStateChange = new CustomEvent("locationStateChange");
+
 export const getLocations = async () => {
   try {
     const response = await fetch(`http://localhost:8088/locations`);
@@ -35,19 +37,27 @@ export const LocationSelector = async () => {
 };
 
 export const LocationHeader = async () => {
-  //TODO - finish this
   const locations = await getLocations();
 
   if (!locations) return `<span>Failed to fetch locations</span>`;
 
+  const selectedLocation = locations.find(
+    (location) => location.id === transientState.locationId
+  );
+
   return `<h1 class="text-center text-dark">
-  You're picking up from the TODO name
+  ${
+    selectedLocation
+      ? `You're picking up from our ${selectedLocation.name} location`
+      : "Select a restaurant location"
+  }
   </h1>`;
 };
 
 const handleLocationSelection = (e) => {
   if (e.target.id === "locations-select") {
     setLocation(Number(e.target.value));
+    document.dispatchEvent(locationStateChange);
   }
 };
 
