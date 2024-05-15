@@ -2,7 +2,7 @@ import { setDessert } from "./transientState.js"
 
 const handleDessertChoice = (changeEvent) => {
     if (changeEvent.target.id === "desserts") {
-        setFood(parseInt(changeEvent.target.value))
+        setDessert(parseInt(changeEvent.target.value))
     }
  }
 
