@@ -7,4 +7,9 @@ const foodContainer = document.querySelector(".food");
 const drinkContainer = document.querySelector(".drink");
 const dessertContainer = document.querySelector(".dessert");
 
-locationContainer.innerHTML = LocationSelector();
+const render = async () => {
+  const locationSelectHTML = await LocationSelector();
+  locationContainer.innerHTML = locationSelectHTML;
+};
+
+render();
