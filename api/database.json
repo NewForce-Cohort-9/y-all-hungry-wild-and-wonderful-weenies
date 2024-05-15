@@ -215,7 +215,6 @@
       "drinkId": 5,
       "drinkQty": 999
     },
-
     {
       "id": 11,
       "locationId": 3,
@@ -246,7 +245,6 @@
       "drinkId": 5,
       "drinkQty": 999
     },
-
     {
       "id": 16,
       "locationId": 4,
@@ -309,7 +307,6 @@
       "dessertId": 5,
       "dessertQty": 999
     },
-
     {
       "id": 6,
       "locationId": 2,
@@ -340,7 +337,6 @@
       "dessertId": 5,
       "dessertQty": 999
     },
-
     {
       "id": 11,
       "locationId": 3,
@@ -433,6 +429,7 @@
       "hotDogId": 5,
       "hotDogQty": 999
     },
+
     {
       "id": 6,
       "locationId": 2,
@@ -523,5 +520,6 @@
       "hotDogId": 8,
       "hotDogQty": 999
     }
-  ]
+  ],
+  "orders": []
 }
