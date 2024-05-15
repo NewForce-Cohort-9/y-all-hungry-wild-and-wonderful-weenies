@@ -37,6 +37,7 @@ export const LocationSelector = async () => {
 };
 
 export const LocationHeader = async () => {
+  console.log("t id", transientState.locationId);
   const locations = await getLocations();
 
   if (!locations) return `<span>Failed to fetch locations</span>`;

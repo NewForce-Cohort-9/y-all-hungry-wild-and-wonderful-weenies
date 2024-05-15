@@ -13,15 +13,19 @@ const dessertContainer = document.querySelector(".dessert");
 
 const render = async () => {
   const locationSelectHTML = await LocationSelector();
-  const locationHeaderHTML = await LocationHeader();
   locationContainer.innerHTML = locationSelectHTML;
+};
+
+const renderLocationHeader = async () => {
+  const locationHeaderHTML = await LocationHeader();
   locationHeaderBox.innerHTML = locationHeaderHTML;
 };
 
 render();
+renderLocationHeader();
 
 document.addEventListener("locationStateChange", () => {
-  render();
+  renderLocationHeader();
 });
 
 const drinkHTML = `
