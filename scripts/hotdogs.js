@@ -26,7 +26,3 @@ export const HotDogDropdown = async () => {
 
     return hotdogOptionsHTML
 }
-
-export const HotDogMenu = async () => {
-
-}
