@@ -6,7 +6,7 @@ export const DrinkSelector = async () => {
 
   document.addEventListener("change", changeHandler);
 
-  let drinkHTML = `<select id="drink" class="form-select form-select-md mb-3"><option value="0">Select Drink</option>`;
+  let drinkHTML = `<select class="form-select form-select-md mb-3" id="drink"><option value="0">Select Drink</option>`;
   const divStringArray = drinks.map((drink) => {
     return `<option value="${drink.id}">${drink.name}</option>`;
   });
