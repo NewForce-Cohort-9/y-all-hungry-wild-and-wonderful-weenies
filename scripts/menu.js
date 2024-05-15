@@ -30,6 +30,7 @@ export const HotDogMenu = async () => {
 
 }
 
+// DRINK MENU CARD!
 export const DrinkMenu = async () => {
     const response = await fetch("http://localhost:8088/drinks")
     const drinks = await response.json()
