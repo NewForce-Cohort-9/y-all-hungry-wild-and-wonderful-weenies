@@ -1,4 +1,5 @@
 import { DrinkSelector } from "./drinks.js";
+import { HotDogDropdown } from "./hotdogs.js";
 import { LocationSelector } from "./locations.js";
 
 const mainContainer = document.querySelector("#main-container");
@@ -21,3 +22,4 @@ ${drinkContainer}
 
 locationContainer.innerHTML = LocationSelector();
 drinkContainer.innerHTML = await DrinkSelector();
+foodContainer.innerHTML = await HotDogDropdown();
