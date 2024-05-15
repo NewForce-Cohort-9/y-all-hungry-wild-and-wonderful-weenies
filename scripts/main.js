@@ -28,10 +28,7 @@ document.addEventListener("locationStateChange", () => {
   renderLocationHeader();
 });
 
-const drinkHTML = `
-${drinkContainer}
-`;
-
+locationContainer.innerHTML = LocationSelector();
 drinkContainer.innerHTML = await DrinkSelector();
 foodContainer.innerHTML = await HotDogDropdown();
 dessertContainer.innerHTML = await DessertDropdown();
