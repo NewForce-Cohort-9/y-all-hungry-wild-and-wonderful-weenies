@@ -11,13 +11,8 @@ const dessertContainer = document.querySelector(".dessert");
 const render = async () => {
   const locationSelectHTML = await LocationSelector();
   locationContainer.innerHTML = locationSelectHTML;
+  const drinkHTML = await DrinkSelector()
+  drinkContainer.innerHTML = drinkHTML
 };
 
 render();
-
-const drinkHTML = `
-${drinkContainer}
-`;
-
-locationContainer.innerHTML = LocationSelector();
-drinkContainer.innerHTML = await DrinkSelector();
