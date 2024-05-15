@@ -6,8 +6,7 @@ export const DrinkSelector = async () => {
 
     document.addEventListener("change", changeHandler)
     
-    let drinkHTML = `<select id="drink"><option value="0">Select Drink</option>
-                    <option value="none">None</option>`
+    let drinkHTML = `<select id="drink"><option value="0">Select Drink</option>`
     const divStringArray = drinks.map(
         (drink) => {
             return `<option value="${drink.id}">${drink.name}</option>`
