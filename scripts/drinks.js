@@ -1,7 +1,7 @@
 import { setDrink } from "./transientState.js";
 
 export const DrinkSelector = async () => {
-  const response = await fetch("http://localhost:8080/drinks");
+  const response = await fetch("http://localhost:8088/drinks");
   const drinks = await response.json();
 
   document.addEventListener("change", changeHandler);
