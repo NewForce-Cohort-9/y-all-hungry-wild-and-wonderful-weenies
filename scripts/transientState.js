@@ -2,6 +2,7 @@
 export const transientState = {
   foodId: 0,
   locationId: 0,
+  drinkId: 0
 };
 
 //reset "state" to defaults
@@ -21,6 +22,11 @@ export const setLocation = (locationId) => {
 };
 
 const customEvent = new CustomEvent("orderPlaced");
+
+export const setDrink = (chosenDrinkId) => {
+    transientState.drinkId = chosenDrinkId
+    console.log(transientState)
+}
 
 export const saveOrder = async () => {
   const postOptions = {
