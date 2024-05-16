@@ -10,7 +10,8 @@ export const HotDogMenu = async () => {
           return `<div class="card mb-3" style="max-width: 540px;">
           <div class="row g-0">
             <div class="col-md-4">
-                <img class="img-fluid rounded-start" alt="..." src='${food.image}'>
+                <img class="img-fluid rounded-start" style="width: 200px; height: 200px;" alt="..." src='${food.image}'>
+            </div>
                     <div class="col-md-8">
                         <div class="card-body">
                             <h5 class="card-title">${food.name}</h5>
@@ -30,6 +31,7 @@ export const HotDogMenu = async () => {
 
 }
 
+// DRINK MENU CARD!
 export const DrinkMenu = async () => {
     const response = await fetch("http://localhost:8088/drinks")
     const drinks = await response.json()
@@ -41,7 +43,8 @@ export const DrinkMenu = async () => {
           return `<div class="card mb-3" style="max-width: 540px;">
           <div class="row g-0">
             <div class="col-md-4">
-                <img class="img-fluid rounded-start" alt="..." src='${drink.image}'>
+                <img class="img-fluid rounded-start" style="width: 200px; height: 200px;" alt="..." src='${drink.image}'>
+            </div>
                     <div class="col-md-8">
                         <div class="card-body">
                             <h5 class="card-title">${drink.name}</h5>
@@ -58,5 +61,38 @@ export const DrinkMenu = async () => {
     drinkMenuHTML += `</section>`
 
     return drinkMenuHTML
+
+}
+
+// DESSERT MENU CARD!
+export const DessertMenu = async () => {
+    const response = await fetch("http://localhost:8088/desserts")
+    const desserts = await response.json()
+
+    let dessertMenuHTML = "<section>"
+
+    const divStringArray = await desserts.map(
+        (dessert) => {
+          return `<div class="card mb-3" style="max-width: 540px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+                <img class="img-fluid rounded-start" style="width: 200px; height: 200px;" alt="..." src='${dessert.image}'>
+            </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">${dessert.name}</h5>
+                            <p class="card-text">${dessert.description}</p>
+                            <p class="card-text">${dessert.price}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>`
+        }
+    )
+
+    dessertMenuHTML += divStringArray.join("")
+    dessertMenuHTML += `</section>`
+
+    return dessertMenuHTML
 
 }

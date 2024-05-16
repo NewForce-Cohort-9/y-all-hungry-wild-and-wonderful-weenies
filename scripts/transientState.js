@@ -3,6 +3,7 @@ export const transientState = {
   foodId: 0,
   locationId: 0,
   drinkId: 0,
+  dessertId: 0,
 };
 
 export const locationItemsState = {
@@ -21,7 +22,9 @@ export const menuItemsState = {
 export const resetAllState = () => {
   transientState.foodId = 0;
   transientState.locationId = 0;
+  transientState.drinkId = 0;
   transientState.dessertId = 0;
+  
 };
 
 export const setLocationItems = (locationItems) => {
