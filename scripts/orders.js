@@ -1,12 +1,19 @@
 import { saveWeenieOrder } from "./placeOrder.js";
 
 export const OrderSummary = async () => {
-    const response = await fetch("http://localhost:8088/order?_expand=food&_expand=drinks&_expand=desserts&_expand=locations");
-    const orderSummary = await response.json();
+        const foodResponse = await fetch("http://localhost:8088/food");
+        const drinkResponse = await fetch("http://localhost:8088/drinks");
+        const dessertResponse = await fetch("http://localhost:8088/desserts");
+    
+        const items = {
+          allFood: await foodResponse.json(),
+          allDrinks: await drinkResponse.json(),
+          allDessert: await dessertResponse.json(),
+        };
 
     let orderSummaryHTML = "<section>"
 
-    const divStringArray = await orderSummary.map(
+    const divStringArray = await items.map(
         (order) => {
           return `<div class="card" style="width: 18rem;">
           <div class="card-header">

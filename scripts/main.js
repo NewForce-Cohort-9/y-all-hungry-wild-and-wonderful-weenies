@@ -4,6 +4,7 @@ import { LocationSelector, LocationHeader } from "./locations.js";
 import { HotDogDropdown } from "./hotdogs.js";
 import { fetchAllLocationItems, fetchMenuItems } from "./transientState.js";
 import { DessertMenu, DrinkMenu, HotDogMenu } from "./menu.js";
+import { OrderSummary } from "./orders.js";
 
 const mainContainer = document.querySelector("#main-container");
 
@@ -13,6 +14,7 @@ const foodContainer = document.querySelector(".food");
 const drinkContainer = document.querySelector(".drink");
 const dessertContainer = document.querySelector(".dessert");
 const menuContainer = document.querySelector(".menu-items");
+const orderSummaryContainer = document.querySelector(".order");
 
 const render = async () => {
   const locationSelectHTML = await LocationSelector();
@@ -35,9 +37,15 @@ const renderMenu = async () => {
   menuContainer.innerHTML += dessertMenuHTML;
 };
 
+const renderOrderSummary = async () => {
+  const orderSummaryHTML = await OrderSummary();
+  orderSummaryContainer.innerHTML = orderSummaryHTML;
+};
+
 render();
 renderLocationHeader();
 renderMenu();
+renderOrderSummary();
 
 document.addEventListener("locationStateChange", () => {
   renderLocationHeader();
