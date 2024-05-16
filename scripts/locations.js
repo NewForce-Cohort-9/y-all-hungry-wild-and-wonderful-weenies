@@ -28,18 +28,18 @@ export const getLocations = async () => {
 
 //in the location arrays (locationDrinks, etc), return only the ones where the...
 //...drinkId, foodId, etc match the full food, drinks, desserts arrays
-const filterByItemId = (allItemsArr, onlyInStockArr, foodPropertyId) => {
+const filterByItemId = (allItemsArr, onlyInStockArr, menuPropertyId) => {
   const matchingItemArr = allItemsArr.filter((item) =>
-    onlyInStockArr.some((itemTwo) => itemTwo[foodPropertyId] === item.id)
+    onlyInStockArr.some((itemTwo) => itemTwo[menuPropertyId] === item.id)
   );
   return matchingItemArr;
 };
 
 //from the full list of menu items, return the ones where the locationId...
 //...matches locationId from selection and have a dessertQty, drinkQt, or hotDogQt, of greater than 0
-const getOnlyInStockItems = (foodQtProperty, menuItemArr, locationId) => {
+const getOnlyInStockItems = (menuQtProperty, menuItemArr, locationId) => {
   const onlyInStockItemArr = menuItemArr.filter(
-    (item) => item.locationId === locationId && item[foodQtProperty] > 0
+    (item) => item.locationId === locationId && item[menuQtProperty] > 0
   );
   return onlyInStockItemArr;
 };
