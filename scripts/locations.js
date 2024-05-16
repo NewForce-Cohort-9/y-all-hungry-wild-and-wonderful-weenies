@@ -1,4 +1,9 @@
-import { setLocation, transientState } from "./transientState.js";
+import {
+  setLocation,
+  transientState,
+  locationItemsState,
+  menuItemsState,
+} from "./transientState.js";
 
 //TODO - finish styling
 
@@ -17,38 +22,36 @@ export const getLocations = async () => {
   }
 };
 
-export const getMenuItemsByLocation = async (locationId) => {
-  try {
-    const foodResponse = await fetch("http://localhost:8088/locationDogs");
-    const drinkResponse = await fetch("http://localhost:8088/locationDrinks");
-    const dessertResponse = await fetch(
-      "http://localhost:8088/locationDesserts"
-    );
+export const filterInStockItems = (locationId, locationItemsState) => {
+  const { food, drinks, dessert } = locationItemsState;
+  const onlyInStockFood = food.filter(
+    (item) => item.locationId === locationId && item.hotDogQty > 0
+  );
+  const onlyInStockDrinks = drinks.filter(
+    (item) => item.locationId === locationId && item.drinkQty > 0
+  );
+  const onlyInStockDesserts = dessert.filter(
+    (item) => item.locationId === locationId && item.dessertQty > 0
+  );
 
-    const drinks = await drinkResponse.json();
-    const food = await foodResponse.json();
-    const desserts = await dessertResponse.json();
+  return {
+    food: onlyInStockFood,
+    drinks: onlyInStockDrinks,
+    dessert: onlyInStockDesserts,
+  };
+};
 
-    if (foodResponse.ok && dessertResponse.ok && dessertResponse.ok) {
-      const onlyInStockFood = food.filter(
-        (item) => item.locationId === locationId && item.hotDogQty > 0
-      );
-      const onlyInStockDrinks = drinks.filter(
-        (item) => item.locationId === locationId && item.drinkQty > 0
-      );
-      const onlyInStockDesserts = desserts.filter(
-        (item) => item.locationId === locationId && item.dessertQty > 0
-      );
-      return {
-        food: onlyInStockFood,
-        drinks: onlyInStockDrinks,
-        desserts: onlyInStockDesserts,
-      };
-    }
-    return null;
-  } catch (error) {
-    return null;
-  }
+export const getCorrespondingItems = (locationId, locationItemsState) => {
+  const { allFood, allDrinks, allDessert } = menuItemsState;
+
+  const { food, drinks, dessert } = filterInStockItems(
+    locationId,
+    locationItemsState
+  );
+
+  const matchingFood = allFood.filter((foodItem) =>
+    food.some((item) => foodItem.id === item.hotDogId)
+  );
 };
 
 export const LocationSelector = async () => {
@@ -79,7 +82,7 @@ export const LocationHeader = async () => {
     (location) => location.id === transientState.locationId
   );
 
-  return `<h1 class="text-center text-dark">
+  return `<h1 class="text-center text-light">
   ${
     selectedLocation
       ? `You're picking up from our ${selectedLocation.name} location`
@@ -90,12 +93,13 @@ export const LocationHeader = async () => {
 
 const handleLocationSelection = async (e) => {
   if (e.target.id === "locations-select") {
-    setLocation(Number(e.target.value));
-    document.dispatchEvent(locationStateChange);
-  }
+    const locationId = Number(e.target.value);
 
-  const menuItems = await getMenuItemsByLocation(Number(e.target.value));
-  console.log("m", menuItems);
+    setLocation(locationId);
+    document.dispatchEvent(locationStateChange);
+
+    const inStockItems = getCorrespondingItems(locationId, locationItemsState);
+  }
 };
 
 document.addEventListener("change", handleLocationSelection);
