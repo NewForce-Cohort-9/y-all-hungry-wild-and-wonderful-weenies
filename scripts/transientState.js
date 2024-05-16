@@ -6,6 +6,18 @@ export const transientState = {
   dessertId: 0,
 };
 
+export const locationItemsState = {
+  food: [],
+  drinks: [],
+  dessert: [],
+};
+
+export const menuItemsState = {
+  allFood: [],
+  allDrinks: [],
+  allDessert: [],
+};
+
 //reset "state" to defaults
 export const resetAllState = () => {
   transientState.foodId = 0;
@@ -15,13 +27,28 @@ export const resetAllState = () => {
   
 };
 
+export const setLocationItems = (locationItems) => {
+  locationItemsState.food = locationItems.food;
+  locationItemsState.drinks = locationItems.drinks;
+  locationItemsState.dessert = locationItems.dessert;
+};
+
+export const setMenuItems = (menuItems) => {
+  menuItemsState.allFood = menuItems.allFood;
+  menuItemsState.allDrinks = menuItems.allDrinks;
+  menuItemsState.allDessert = menuItems.allDessert;
+};
+
 //add the required setter functions to create your order
 export const setFood = (chosenFoodId) => {
   transientState.foodId = chosenFoodId;
   console.log(transientState);
+
+  const chosenLocation = transientState.locationId;
+  console.log("chosen location", chosenLocation);
 };
 
-export const setLocation = (locationId) => {
+export const setLocation = async (locationId) => {
   transientState.locationId = locationId;
 };
 
@@ -33,6 +60,49 @@ export const setDrink = (chosenDrinkId) => {
 export const setDessert = (chosenDessertId) => {
   transientState.dessertId = chosenDessertId;
   console.log(transientState);
+};
+
+export const fetchMenuItems = async () => {
+  try {
+    const foodResponse = await fetch("http://localhost:8088/food");
+    const drinkResponse = await fetch("http://localhost:8088/drinks");
+    const dessertResponse = await fetch("http://localhost:8088/desserts");
+
+    const items = {
+      allFood: await foodResponse.json(),
+      allDrinks: await drinkResponse.json(),
+      allDessert: await dessertResponse.json(),
+    };
+
+    setMenuItems(items);
+
+    return items;
+  } catch (error) {
+    return null;
+  }
+};
+
+export const fetchAllLocationItems = async () => {
+  try {
+    const foodResponse = await fetch("http://localhost:8088/locationDogs");
+    const drinkResponse = await fetch("http://localhost:8088/locationDrinks");
+    const dessertResponse = await fetch(
+      "http://localhost:8088/locationDesserts"
+    );
+    const food = await foodResponse.json();
+    const drinks = await drinkResponse.json();
+    const dessert = await dessertResponse.json();
+
+    setLocationItems({ food, drinks, dessert });
+
+    return {
+      food,
+      drinks,
+      dessert,
+    };
+  } catch (error) {
+    return null;
+  }
 };
 
 export const saveOrder = async () => {
