@@ -26,6 +26,8 @@ export const getLocations = async () => {
   }
 };
 
+//in the location arrays (locationDrinks, etc), return only the ones where the...
+//...drinkId, foodId, etc match the full food, drinks, desserts arrays
 const filterByItemId = (allItemsArr, onlyInStockArr, foodPropertyId) => {
   const matchingItemArr = allItemsArr.filter((item) =>
     onlyInStockArr.some((itemTwo) => itemTwo[foodPropertyId] === item.id)
@@ -33,6 +35,8 @@ const filterByItemId = (allItemsArr, onlyInStockArr, foodPropertyId) => {
   return matchingItemArr;
 };
 
+//from the full list of menu items, return the ones where the locationId...
+//...matches locationId from selection and have a dessertQty, drinkQt, or hotDogQt, of greater than 0
 const getOnlyInStockItems = (foodQtProperty, menuItemArr, locationId) => {
   const onlyInStockItemArr = menuItemArr.filter(
     (item) => item.locationId === locationId && item[foodQtProperty] > 0
@@ -40,6 +44,7 @@ const getOnlyInStockItems = (foodQtProperty, menuItemArr, locationId) => {
   return onlyInStockItemArr;
 };
 
+//from the full list of location items, filter down the ones that are in stock
 export const filterInStockItems = (locationId, locationItemsState) => {
   const { food, drinks, dessert } = locationItemsState;
 
@@ -58,6 +63,8 @@ export const filterInStockItems = (locationId, locationItemsState) => {
   };
 };
 
+//when a location is selected, this runs and returns the menu items that...
+//match the locationId and that are also in stock
 export const getMenuItemsFromLocationItems = (
   locationId,
   locationItemsState
@@ -121,6 +128,9 @@ export const LocationHeader = async () => {
   </h1>`;
 };
 
+//dispatch location state change to update the location header...
+//...and dispatch an event to update drop down items so that items relevant...
+//...to locations are reflected in the drop downs.
 const handleLocationSelection = async (e) => {
   if (e.target.id === "locations-select") {
     const locationId = Number(e.target.value);
