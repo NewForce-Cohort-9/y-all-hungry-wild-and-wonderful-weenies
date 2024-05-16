@@ -36,6 +36,7 @@ const renderHotdogDropDown = async () => {
   foodContainer.innerHTML = await HotDogDropdown();
 };
 
+// Wild n Wonderful Weenies Full Menu
 const renderMenu = async () => {
   const hotdogMenuHTML = await HotDogMenu();
   const drinkMenuHTML = await DrinkMenu();
@@ -45,15 +46,11 @@ const renderMenu = async () => {
   menuContainer.innerHTML += dessertMenuHTML;
 };
 
+// Order Summary Ticket -> acts like a shopping cart
 const renderOrderSummary = async () => {
   const orderSummaryHTML = await OrderSummary();
   orderSummaryContainer.innerHTML = orderSummaryHTML;
 };
-
-render();
-renderLocationHeader();
-renderMenu();
-renderOrderSummary();
 
 const fetchAndSetArrState = async () => {
   await fetchAllLocationItems();
@@ -66,11 +63,13 @@ const fetchAndSetArrState = async () => {
   document.dispatchEvent(menuItemArrayChange);
 };
 
+// Printing to DOM
 renderLocationSelector();
 renderLocationHeader();
 renderMenu();
 renderHotdogDropDown();
 fetchAndSetArrState();
+renderOrderSummary();
 
 document.addEventListener("locationStateChange", () => {
   renderLocationHeader();

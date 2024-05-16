@@ -12,15 +12,20 @@ export const OrderSummary = async () => {
           allDessert: await dessertResponse.json(),
         };
     
+        // finding the menu item names
         const selectedFoodName = 
             items.allFood.find((item) => item.name === transientState.foodId)
 
         const selectedDrinkName = 
             items.allDrinks.find((item) => item.name === transientState.drinkId)
         
+        const selectedDessertName = 
+            items.allDessert.find((item) => item.name === transientState.dessertId)
+
 
     let orderSummaryHTML = "<section>"
-
+        // what's being mapped needs revisited -> possibly what's in cart?
+        // NEED TO ADD A SUM OF PRICE FUNCTION
     const divStringArray = await items.map(
         (order) => {
           return `<div class="card" style="width: 18rem;">
@@ -29,10 +34,11 @@ export const OrderSummary = async () => {
           </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">${order.selectedFoodName}</li>
-                    <li class="list-group-item">${order.drinks.name}</li>
-                    <li class="list-group-item">${order.desserts.name}</li>
+                    <li class="list-group-item">${order.selectedDrinkName}</li>
+                    <li class="list-group-item">${order.selectedDessertName}</li>
                 </ul>
           <div class="card-footer">
+          <!-- button -->
           ${saveWeenieOrder}
           </div>
         </div>`
