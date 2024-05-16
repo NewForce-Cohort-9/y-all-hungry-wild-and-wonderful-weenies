@@ -3,13 +3,16 @@ export const transientState = {
   foodId: 0,
   locationId: 0,
   drinkId: 0,
+  dessertId: 0,
 };
 
 //reset "state" to defaults
 export const resetAllState = () => {
   transientState.foodId = 0;
   transientState.locationId = 0;
+  transientState.drinkId = 0;
   transientState.dessertId = 0;
+  
 };
 
 //add the required setter functions to create your order
