@@ -24,6 +24,13 @@ export const menuItemsState = {
   allDessert: [],
 };
 
+// order summary ticket "shopping cart"
+export const cart = {
+  food: [],
+  drinks: [],
+  dessert: [],
+}
+
 export const setTransientHotdog = (updatedArr) => {
   transientState.hotdogs = updatedArr;
 };

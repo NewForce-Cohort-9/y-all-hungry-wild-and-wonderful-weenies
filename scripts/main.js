@@ -10,6 +10,7 @@ import {
   setTransientDesserts,
 } from "./transientState.js";
 import { DessertMenu, DrinkMenu, HotDogMenu } from "./menu.js";
+import { OrderSummary } from "./orders.js";
 
 const menuItemArrayChange = new CustomEvent("itemsChange");
 
@@ -19,6 +20,7 @@ const foodContainer = document.querySelector(".food");
 const drinkContainer = document.querySelector(".drink");
 const dessertContainer = document.querySelector(".dessert");
 const menuContainer = document.querySelector(".menu-items");
+const orderSummaryContainer = document.querySelector(".order");
 
 const renderLocationSelector = async () => {
   const locationSelectHTML = await LocationSelector();
@@ -34,6 +36,7 @@ const renderHotdogDropDown = async () => {
   foodContainer.innerHTML = await HotDogDropdown();
 };
 
+// Wild n Wonderful Weenies Full Menu
 const renderMenu = async () => {
   const hotdogMenuHTML = await HotDogMenu();
   const drinkMenuHTML = await DrinkMenu();
@@ -41,6 +44,12 @@ const renderMenu = async () => {
   menuContainer.innerHTML = hotdogMenuHTML;
   menuContainer.innerHTML += drinkMenuHTML;
   menuContainer.innerHTML += dessertMenuHTML;
+};
+
+// Order Summary Ticket -> acts like a shopping cart
+const renderOrderSummary = async () => {
+  const orderSummaryHTML = await OrderSummary();
+  orderSummaryContainer.innerHTML = orderSummaryHTML;
 };
 
 const fetchAndSetArrState = async () => {
@@ -54,11 +63,13 @@ const fetchAndSetArrState = async () => {
   document.dispatchEvent(menuItemArrayChange);
 };
 
+// Printing to DOM
 renderLocationSelector();
 renderLocationHeader();
 renderMenu();
 renderHotdogDropDown();
 fetchAndSetArrState();
+renderOrderSummary();
 
 document.addEventListener("locationStateChange", () => {
   renderLocationHeader();
