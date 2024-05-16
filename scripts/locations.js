@@ -41,7 +41,10 @@ export const filterInStockItems = (locationId, locationItemsState) => {
   };
 };
 
-export const getCorrespondingItems = (locationId, locationItemsState) => {
+export const getMenuItemsFromLocationItems = (
+  locationId,
+  locationItemsState
+) => {
   const { allFood, allDrinks, allDessert } = menuItemsState;
 
   const { food, drinks, dessert } = filterInStockItems(
@@ -52,6 +55,20 @@ export const getCorrespondingItems = (locationId, locationItemsState) => {
   const matchingFood = allFood.filter((foodItem) =>
     food.some((item) => foodItem.id === item.hotDogId)
   );
+  const matchingDrinks = allDrinks.filter((drinkItem) =>
+    drinks.some((item) => drinkItem.id === item.drinkId)
+  );
+  const matchingDesserts = allDessert.filter((dessertItem) =>
+    dessert.some((item) => dessertItem.id === item.dessertId)
+  );
+
+  const relevantMenuItems = {
+    food: matchingFood,
+    drinks: matchingDrinks,
+    dessert: matchingDesserts,
+  };
+
+  return relevantMenuItems;
 };
 
 export const LocationSelector = async () => {
@@ -98,7 +115,11 @@ const handleLocationSelection = async (e) => {
     setLocation(locationId);
     document.dispatchEvent(locationStateChange);
 
-    const inStockItems = getCorrespondingItems(locationId, locationItemsState);
+    const inStockItems = getMenuItemsFromLocationItems(
+      locationId,
+      locationItemsState
+    );
+    //TODO: update "state" based on in stock items
   }
 };
 

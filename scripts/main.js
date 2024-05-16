@@ -15,7 +15,6 @@ const dessertContainer = document.querySelector(".dessert");
 const render = async () => {
   const locationSelectHTML = await LocationSelector();
   locationContainer.innerHTML = locationSelectHTML;
-
   await fetchAllLocationItems();
   await fetchMenuItems();
 };
