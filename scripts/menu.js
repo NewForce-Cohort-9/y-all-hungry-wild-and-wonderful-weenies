@@ -10,7 +10,7 @@ export const HotDogMenu = async () => {
           return `<div class="card mb-3" style="max-width: 540px;">
           <div class="row g-0">
             <div class="col-md-4">
-                <img class="img-fluid rounded-start" alt="..." src='${food.image}'>
+                <img class="img-fluid rounded-start" style="width: 200px; height: 200px;" alt="..." src='${food.image}'>
             </div>
                     <div class="col-md-8">
                         <div class="card-body">
@@ -43,7 +43,7 @@ export const DrinkMenu = async () => {
           return `<div class="card mb-3" style="max-width: 540px;">
           <div class="row g-0">
             <div class="col-md-4">
-                <img class="img-fluid rounded-start" alt="..." src='${drink.image}'>
+                <img class="img-fluid rounded-start" style="width: 200px; height: 200px;" alt="..." src='${drink.image}'>
             </div>
                     <div class="col-md-8">
                         <div class="card-body">
@@ -76,7 +76,7 @@ export const DessertMenu = async () => {
           return `<div class="card mb-3" style="max-width: 540px;">
           <div class="row g-0">
             <div class="col-md-4">
-                <img class="img-fluid rounded-start" alt="..." src='${dessert.image}'>
+                <img class="img-fluid rounded-start" style="width: 200px; height: 200px;" alt="..." src='${dessert.image}'>
             </div>
                     <div class="col-md-8">
                         <div class="card-body">

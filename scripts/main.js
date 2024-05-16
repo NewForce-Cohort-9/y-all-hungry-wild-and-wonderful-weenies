@@ -2,7 +2,7 @@ import { DessertDropdown } from "./desserts.js";
 import { DrinkSelector } from "./drinks.js";
 import { LocationSelector, LocationHeader } from "./locations.js";
 import { HotDogDropdown } from "./hotdogs.js";
-import { HotDogMenu } from "./menu.js";
+import { DessertMenu, DrinkMenu, HotDogMenu } from "./menu.js";
 
 const mainContainer = document.querySelector("#main-container");
 
@@ -25,7 +25,11 @@ const renderLocationHeader = async () => {
 
 const renderMenu = async () => {
     const hotdogMenuHTML = await HotDogMenu();
+    const drinkMenuHTML = await DrinkMenu();
+    const dessertMenuHTML = await DessertMenu();
     menuContainer.innerHTML = hotdogMenuHTML;
+    menuContainer.innerHTML += drinkMenuHTML;
+    menuContainer.innerHTML += dessertMenuHTML;
   };
 
 render();
