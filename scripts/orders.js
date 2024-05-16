@@ -1,4 +1,5 @@
 import { saveWeenieOrder } from "./placeOrder.js";
+import { transientState, cart } from "./transientState.js";
 
 export const OrderSummary = async () => {
         const foodResponse = await fetch("http://localhost:8088/food");
@@ -10,6 +11,13 @@ export const OrderSummary = async () => {
           allDrinks: await drinkResponse.json(),
           allDessert: await dessertResponse.json(),
         };
+    
+        const selectedFoodName = 
+            items.allFood.find((item) => item.name === transientState.foodId)
+
+        const selectedDrinkName = 
+            items.allDrinks.find((item) => item.name === transientState.drinkId)
+        
 
     let orderSummaryHTML = "<section>"
 
@@ -20,7 +28,7 @@ export const OrderSummary = async () => {
             Wild & Wonderful Wennie Order Includes:
           </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">${order.food.name}</li>
+                    <li class="list-group-item">${order.selectedFoodName}</li>
                     <li class="list-group-item">${order.drinks.name}</li>
                     <li class="list-group-item">${order.desserts.name}</li>
                 </ul>

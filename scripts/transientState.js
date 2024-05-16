@@ -18,6 +18,13 @@ export const menuItemsState = {
   allDessert: [],
 };
 
+// order summary ticket "shopping cart"
+export const cart = {
+  food: [],
+  drinks: [],
+  dessert: [],
+};
+
 //reset "state" to defaults
 export const resetAllState = () => {
   transientState.foodId = 0;
