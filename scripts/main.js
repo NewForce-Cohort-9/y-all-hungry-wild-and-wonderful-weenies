@@ -47,7 +47,7 @@ const fetchAndSetArrState = async () => {
   await fetchAllLocationItems();
   const allItems = await fetchMenuItems();
 
-  setTransientHotdog(allItems.allFood, "hotdogs");
+  setTransientHotdog(allItems.allFood);
   setTransientDrinks(allItems.allDrinks);
   setTransientDesserts(allItems.allDessert);
 
