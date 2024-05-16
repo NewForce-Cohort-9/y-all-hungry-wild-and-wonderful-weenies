@@ -1,11 +1,16 @@
 body {
   margin: 0;
-  background: var(--primary);
+  background: var(--lightYellow);
+}
+
+.navbar.custom-nav {
+  background-color: var(--middleBlue);
 }
 
 :root {
   --primary: #172934;
   --secondary: #f1bf17;
+  --lightYellow: #ffe797;
   --lightBlue: #375f73;
   --middleBlue: #083c55;
 }
