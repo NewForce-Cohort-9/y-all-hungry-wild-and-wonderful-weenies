@@ -1,9 +1,15 @@
 //add the required properties to the object below for your order
+
+//TODO - all of the "state" may not be neccessary, can be cleaned up later on
+
 export const transientState = {
   foodId: 0,
   locationId: 0,
   drinkId: 0,
   dessertId: 0,
+  hotdogs: [],
+  drinks: [],
+  dessert: [],
 };
 
 export const locationItemsState = {
@@ -23,6 +29,18 @@ export const cart = {
   food: [],
   drinks: [],
   dessert: [],
+}
+
+export const setTransientHotdog = (updatedArr) => {
+  transientState.hotdogs = updatedArr;
+};
+
+export const setTransientDrinks = (updatedArr) => {
+  transientState.drinks = updatedArr;
+};
+
+export const setTransientDesserts = (updatedArr) => {
+  transientState.dessert = updatedArr;
 };
 
 //reset "state" to defaults
@@ -31,7 +49,6 @@ export const resetAllState = () => {
   transientState.locationId = 0;
   transientState.drinkId = 0;
   transientState.dessertId = 0;
-  
 };
 
 export const setLocationItems = (locationItems) => {

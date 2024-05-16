@@ -1,4 +1,4 @@
-import { setFood } from "./transientState.js";
+import { setFood, transientState } from "./transientState.js";
 
 const handleHotDogChoice = (changeEvent) => {
   if (changeEvent.target.id === "hotdogs") {
@@ -7,15 +7,14 @@ const handleHotDogChoice = (changeEvent) => {
 };
 
 export const HotDogDropdown = async () => {
-  const response = await fetch("http://localhost:8088/food");
-  const hotdogs = await response.json();
+  const hotdogs = transientState.hotdogs;
 
   document.addEventListener("change", handleHotDogChoice);
 
   let hotdogOptionsHTML = `<select class="form-select form-select-md mb-3" id='hotdogs'>
     <option value='0'>Select Your Weenie...</option>`;
 
-  const divStringArray = await hotdogs.map((hotdog) => {
+  const divStringArray = hotdogs.map((hotdog) => {
     return `<option value='${hotdog.id}'>${hotdog.name}</option>`;
   });
 

@@ -3,11 +3,15 @@ import {
   transientState,
   locationItemsState,
   menuItemsState,
+  setTransientHotdog,
+  setTransientDrinks,
+  setTransientDesserts,
 } from "./transientState.js";
 
 //TODO - finish styling
 
 const locationStateChange = new CustomEvent("locationStateChange");
+const menuItemArrayChange = new CustomEvent("itemsChange");
 
 export const getLocations = async () => {
   try {
@@ -22,22 +26,35 @@ export const getLocations = async () => {
   }
 };
 
+const filterByItemId = (allItemsArr, onlyInStockArr, foodPropertyId) => {
+  const matchingItemArr = allItemsArr.filter((item) =>
+    onlyInStockArr.some((itemTwo) => itemTwo[foodPropertyId] === item.id)
+  );
+  return matchingItemArr;
+};
+
+const getOnlyInStockItems = (foodQtProperty, menuItemArr, locationId) => {
+  const onlyInStockItemArr = menuItemArr.filter(
+    (item) => item.locationId === locationId && item[foodQtProperty] > 0
+  );
+  return onlyInStockItemArr;
+};
+
 export const filterInStockItems = (locationId, locationItemsState) => {
   const { food, drinks, dessert } = locationItemsState;
-  const onlyInStockFood = food.filter(
-    (item) => item.locationId === locationId && item.hotDogQty > 0
-  );
-  const onlyInStockDrinks = drinks.filter(
-    (item) => item.locationId === locationId && item.drinkQty > 0
-  );
-  const onlyInStockDesserts = dessert.filter(
-    (item) => item.locationId === locationId && item.dessertQty > 0
+
+  const onlyInStockFood = getOnlyInStockItems("hotDogQty", food, locationId);
+  const onlyInStockDrinks = getOnlyInStockItems("drinkQty", drinks, locationId);
+  const onlyInStockDesserts = getOnlyInStockItems(
+    "dessertQty",
+    dessert,
+    locationId
   );
 
   return {
-    food: onlyInStockFood,
-    drinks: onlyInStockDrinks,
-    dessert: onlyInStockDesserts,
+    inStockFood: onlyInStockFood,
+    inStockDrinks: onlyInStockDrinks,
+    inStockDessert: onlyInStockDesserts,
   };
 };
 
@@ -47,28 +64,24 @@ export const getMenuItemsFromLocationItems = (
 ) => {
   const { allFood, allDrinks, allDessert } = menuItemsState;
 
-  const { food, drinks, dessert } = filterInStockItems(
+  const { inStockFood, inStockDrinks, inStockDessert } = filterInStockItems(
     locationId,
     locationItemsState
   );
 
-  const matchingFood = allFood.filter((foodItem) =>
-    food.some((item) => foodItem.id === item.hotDogId)
-  );
-  const matchingDrinks = allDrinks.filter((drinkItem) =>
-    drinks.some((item) => drinkItem.id === item.drinkId)
-  );
-  const matchingDesserts = allDessert.filter((dessertItem) =>
-    dessert.some((item) => dessertItem.id === item.dessertId)
+  const matchingFood = filterByItemId(allFood, inStockFood, "hotDogId");
+  const matchingDrinks = filterByItemId(allDrinks, inStockDrinks, "drinkId");
+  const matchingDesserts = filterByItemId(
+    allDessert,
+    inStockDessert,
+    "dessertId"
   );
 
-  const relevantMenuItems = {
+  return {
     food: matchingFood,
     drinks: matchingDrinks,
     dessert: matchingDesserts,
   };
-
-  return relevantMenuItems;
 };
 
 export const LocationSelector = async () => {
@@ -119,7 +132,11 @@ const handleLocationSelection = async (e) => {
       locationId,
       locationItemsState
     );
-    //TODO: update "state" based on in stock items
+    setTransientHotdog(inStockItems.food);
+    setTransientDrinks(inStockItems.drinks);
+    setTransientDesserts(inStockItems.dessert);
+
+    document.dispatchEvent(menuItemArrayChange);
   }
 };
 
