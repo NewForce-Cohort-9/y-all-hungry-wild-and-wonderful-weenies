@@ -7,7 +7,6 @@ const handleHotDogChoice = (changeEvent) => {
 };
 
 export const HotDogDropdown = async () => {
-  console.log("state from drop", transientState);
   const hotdogs = transientState.hotdogs;
 
   document.addEventListener("change", handleHotDogChoice);
