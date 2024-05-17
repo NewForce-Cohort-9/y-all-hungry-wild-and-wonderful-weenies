@@ -72,3 +72,13 @@ justify-content: center;
   background-color: var(--middleBlue);
   width: fit-content;
 }
+
+/* Add styles for the menu section headers */
+section h2 {
+  font-family: "Finger Paint", sans-serif;
+  font-size: 24px;
+  color: #f1bf17;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 10px;
+}
