@@ -10,6 +10,7 @@ export const transientState = {
   hotdogs: [],
   drinks: [],
   dessert: [],
+  orderPrice: 0,
 };
 
 export const locationItemsState = {
@@ -25,6 +26,10 @@ export const menuItemsState = {
 };
 
 const orderSent = new CustomEvent("orderSent");
+
+export const setOrderPrice = (price) => {
+  transientState.orderPrice = price;
+};
 
 export const setTransientHotdog = (updatedArr) => {
   transientState.hotdogs = updatedArr;
@@ -125,12 +130,19 @@ export const fetchAllLocationItems = async () => {
 };
 
 export const saveOrder = async () => {
+  const propertiesToSend = {
+    foodId: transientState.foodId,
+    locationId: transientState.locationId,
+    drinkId: transientState.drinkId,
+    dessertId: transientState.dessertId,
+  };
+
   const postOptions = {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(transientState),
+    body: JSON.stringify(propertiesToSend),
   };
   const response = await fetch("http://localhost:8088/orders", postOptions);
 

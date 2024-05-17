@@ -1,20 +1,19 @@
+import { transientState } from "./transientState.js";
+
 // ORDER POPUP MODULE CARD! => https://getbootstrap.com/docs/5.3/components/modal/#modal-components :)
+
 export const OrderConfirmation = async () => {
-    const submitedOrders = await fetch("http://localhost:8088/orders?_expand=food&_expand=drinks&_expand=desserts");
-    const orders = await submitedOrders.json();
+  const submitedOrders = await fetch("http://localhost:8088/orders");
+  const orders = await submitedOrders.json();
 
-    let OrderConfirmationPopupHTML = "<section>"
+  const latestOrder = orders[orders.length - 1];
 
-    const divStringArray = await orders.map(
-        (order) => {
-            const WITH_SALES_TAX = 1.06;
+  const formattedPrice = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  }).format(transientState.orderPrice);
 
-            const orderPrice = order?.food?.price + order?.drinks?.price + order?.desserts?.price * WITH_SALES_TAX
-
-            const formattedPrice = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(orderPrice)
-
-            
-          return `<div class="modal" tabindex="-1">
+  return `<div id="order-confirmation" class="modal hide-modal" tabindex="-1">
           <div class="modal-dialog modal-dialog-centered">>
             <div class="modal-content">
               <div class="modal-header">
@@ -27,7 +26,7 @@ export const OrderConfirmation = async () => {
                 <div class="modal-body">
                     <h5 class="fw-bold">>THANK YOU FOR YOUR PURCHASE!</h5>
                     <span class="p-3 bg-info bg-opacity-10 border border-info border-start-0 rounded">
-                        <p class="fw-medium">ORDER #${order.id}</p>
+                        <p class="fw-medium">ORDER #${latestOrder.id}</p>
                     </span
                     <p class="fw-light">Total Price: ${formattedPrice}</p>
                 </div>
@@ -38,13 +37,7 @@ export const OrderConfirmation = async () => {
               </div>
             </div>
           </div>
-        </div>`
-        }
-    )
-
-    OrderConfirmationPopupHTML += divStringArray.join("")
-    OrderConfirmationPopupHTML += `</section>`
-
-    return OrderConfirmationPopupHTML
-
-}
+        </div>
+  
+        `;
+};
