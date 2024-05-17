@@ -3,7 +3,7 @@ export const HotDogMenu = async () => {
     const response = await fetch("http://localhost:8088/food")
     const food = await response.json()
 
-    let foodMenuHTML = "<section>"
+    let foodMenuHTML = '<section class="menuCard"><h1>Dogs:</h1>'
 
     const divStringArray = await food.map(
         (food) => {
@@ -17,6 +17,7 @@ export const HotDogMenu = async () => {
                             <h5 class="card-title">${food.name}</h5>
                             <p class="card-text">${food.description}</p>
                             <p class="card-text">${food.price}</p>
+                            <aside>In Stock: QTY HERE</aside>
                         </div>
                     </div>
                 </div>
@@ -36,7 +37,7 @@ export const DrinkMenu = async () => {
     const response = await fetch("http://localhost:8088/drinks")
     const drinks = await response.json()
 
-    let drinkMenuHTML = "<section>"
+    let drinkMenuHTML = '<section class="menuCard"><h1>Drinks:</h1>'
 
     const divStringArray = await drinks.map(
         (drink) => {
@@ -50,6 +51,7 @@ export const DrinkMenu = async () => {
                             <h5 class="card-title">${drink.name}</h5>
                             <p class="card-text">${drink.description}</p>
                             <p class="card-text">${drink.price}</p>
+                            <aside>In Stock: QTY HERE</aside>
                         </div>
                     </div>
                 </div>
@@ -69,7 +71,7 @@ export const DessertMenu = async () => {
     const response = await fetch("http://localhost:8088/desserts")
     const desserts = await response.json()
 
-    let dessertMenuHTML = "<section>"
+    let dessertMenuHTML = '<section class="menuCardEnd"><h1>Shakes:</h1>'
 
     const divStringArray = await desserts.map(
         (dessert) => {
@@ -83,6 +85,7 @@ export const DessertMenu = async () => {
                             <h5 class="card-title">${dessert.name}</h5>
                             <p class="card-text">${dessert.description}</p>
                             <p class="card-text">${dessert.price}</p>
+                            <aside>In Stock: QTY HERE</aside>
                         </div>
                     </div>
                 </div>
