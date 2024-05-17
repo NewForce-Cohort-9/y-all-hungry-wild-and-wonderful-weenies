@@ -24,6 +24,8 @@ export const menuItemsState = {
   allDessert: [],
 };
 
+const orderSent = new CustomEvent("orderSent");
+
 export const setTransientHotdog = (updatedArr) => {
   transientState.hotdogs = updatedArr;
 };
@@ -133,7 +135,7 @@ export const saveOrder = async () => {
   const response = await fetch("http://localhost:8088/orders", postOptions);
 
   if (response.ok) {
-    document.dispatchEvent(customEvent);
+    document.dispatchEvent(orderSent);
     resetAllState();
   }
 };
