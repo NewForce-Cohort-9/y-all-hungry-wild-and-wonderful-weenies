@@ -32,9 +32,7 @@ export const OrderSummary = () => {
 
   const totalPriceWithTax = totalPrice * WITH_SALES_TAX;
 
-  setOrderPrice(totalPriceWithTax);
-
-  return `<section><div class="card" style="width: 18rem;">
+  return `<section><div class="card" style="width: 30em;">
           <div class="card-header">
             Wild & Wonderful Weenie Order Includes:
           </div>

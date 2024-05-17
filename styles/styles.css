@@ -69,10 +69,29 @@ aside {
   font-style: normal;
   font-size: 60px;
   margin: 0.5em;
-  padding: 1rem;
+  padding: 1rem 1rem 0 1rem;
   border-radius: 10px;
   background-color: var(--middleBlue);
   width: fit-content;
+}
+.menuCard {
+  padding-left: 1em;
+  padding-bottom: 2em;
+}
+
+.menuCardEnd {
+  padding-left: 1em;
+}
+
+.itemFlex {
+  display: flex;
+  justify-content: space-between;
+}
+
+div.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
 
 /* Add styles for the menu section headers */

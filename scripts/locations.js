@@ -97,7 +97,7 @@ export const LocationSelector = async () => {
   if (!locations) return `<span>Failed to fetch locations.</span>`;
 
   let locationOptionsHTML = `<select class="form-select form-select-md mb-3" id="locations-select">`;
-  locationOptionsHTML += `<option value="0">Select restaurant location</option>`;
+  locationOptionsHTML += `<option value="0">Select Restaurant Location...</option>`;
 
   locationOptionsHTML += locations.map((location) => {
     return `
