@@ -47,8 +47,8 @@ const renderMenu = async () => {
 };
 
 // Order Summary Ticket -> acts like a shopping cart
-const renderOrderSummary = async () => {
-  const orderSummaryHTML = await OrderSummary();
+const renderOrderSummary = () => {
+  const orderSummaryHTML = OrderSummary();
   orderSummaryContainer.innerHTML = orderSummaryHTML;
 };
 

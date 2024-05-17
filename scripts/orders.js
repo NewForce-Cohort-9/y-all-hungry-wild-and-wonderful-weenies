@@ -1,7 +1,7 @@
 import { saveWeenieOrder } from "./placeOrder.js";
 import { transientState, menuItemsState } from "./transientState.js";
 
-export const OrderSummary = async () => {
+export const OrderSummary = () => {
   const WITH_SALES_TAX = 1.06;
   //destructure menu arrays from menuItemsState object
   const { allFood, allDrinks, allDessert } = menuItemsState;
@@ -63,7 +63,7 @@ export const OrderSummary = async () => {
                         ${
                           selectedDessert
                             ? selectedDessert.name
-                            : "Select a drink"
+                            : "Select a shake"
                         }
                         </span> 
                         <span>
