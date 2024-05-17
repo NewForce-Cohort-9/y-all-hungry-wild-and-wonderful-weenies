@@ -72,16 +72,6 @@ justify-content: center;
   background-color: var(--middleBlue);
   width: fit-content;
 }
-
-h1 {
-  font-family: "Finger Paint", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 60px;
-  color: var(--secondary);
-  padding: 0 0 .75rem 1rem;
-}
-
 .menuCard {
   padding-left: 1em;
   padding-bottom: 2em;
@@ -100,4 +90,14 @@ div.sticky {
   position: sticky;
   top: 0;
   z-index: 999;
+}
+
+/* Add styles for the menu section headers */
+section h2 {
+  font-family: "Finger Paint", sans-serif;
+  font-size: 24px;
+  color: #f1bf17;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 10px;
 }
