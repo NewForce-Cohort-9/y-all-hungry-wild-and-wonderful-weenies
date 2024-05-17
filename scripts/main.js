@@ -11,6 +11,7 @@ import {
 } from "./transientState.js";
 import { DessertMenu, DrinkMenu, HotDogMenu } from "./menu.js";
 import { OrderSummary } from "./orders.js";
+import { OrderConfirmation } from "./orderConfirmation.js";
 
 const menuItemArrayChange = new CustomEvent("itemsChange");
 
@@ -21,6 +22,8 @@ const drinkContainer = document.querySelector(".drink");
 const dessertContainer = document.querySelector(".dessert");
 const menuContainer = document.querySelector(".menu-items");
 const orderSummaryContainer = document.querySelector(".order");
+
+const modalContainer = document.querySelector("#modal-ctn");
 
 const renderLocationSelector = async () => {
   const locationSelectHTML = await LocationSelector();
@@ -52,6 +55,10 @@ const renderOrderSummary = async () => {
   orderSummaryContainer.innerHTML = orderSummaryHTML;
 };
 
+const renderModal = async () => {
+  modalContainer.innerHTML = await OrderConfirmation();
+};
+
 //get initial data from database and store them in state arrays
 const fetchAndSetArrState = async () => {
   await fetchAllLocationItems();
@@ -71,6 +78,7 @@ renderMenu();
 renderHotdogDropDown();
 fetchAndSetArrState();
 renderOrderSummary();
+renderModal();
 
 //re-render location header when a location selection is made
 document.addEventListener("locationStateChange", () => {
@@ -84,6 +92,10 @@ document.addEventListener("itemsChange", () => {
 
 document.addEventListener("cartUpdate", () => {
   renderOrderSummary();
+});
+
+document.addEventListener("priceChange", () => {
+  renderModal();
 });
 
 locationContainer.innerHTML = LocationSelector();

@@ -1,7 +1,13 @@
 import { saveWeenieOrder } from "./placeOrder.js";
-import { transientState, menuItemsState } from "./transientState.js";
+import {
+  transientState,
+  menuItemsState,
+  setOrderPrice,
+} from "./transientState.js";
 
-export const OrderSummary = async () => {
+const priceChange = new CustomEvent("priceChange");
+
+export const OrderSummary = () => {
   const WITH_SALES_TAX = 1.06;
   //destructure menu arrays from menuItemsState object
   const { allFood, allDrinks, allDessert } = menuItemsState;
@@ -27,6 +33,9 @@ export const OrderSummary = async () => {
   ].reduce((prev, curr) => prev + curr, 0);
 
   const totalPriceWithTax = totalPrice * WITH_SALES_TAX;
+
+  setOrderPrice(totalPriceWithTax);
+  document.dispatchEvent(priceChange);
 
   return `<section><div class="card" style="width: 30em;">
           <div class="card-header">
@@ -63,7 +72,7 @@ export const OrderSummary = async () => {
                         ${
                           selectedDessert
                             ? selectedDessert.name
-                            : "Select a dessert"
+                            : "Select a shake"
                         }
                         </span> 
                         <span>
