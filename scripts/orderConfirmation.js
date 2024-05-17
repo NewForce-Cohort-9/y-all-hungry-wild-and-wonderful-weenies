@@ -7,7 +7,9 @@ export const OrderConfirmation = async () => {
 
     const divStringArray = await orders.map(
         (order) => {
-            const orderPrice = order?.food?.price + order?.drinks?.price + order?.desserts?.price
+            const WITH_SALES_TAX = 1.06;
+
+            const orderPrice = order?.food?.price + order?.drinks?.price + order?.desserts?.price * WITH_SALES_TAX
 
             const formattedPrice = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(orderPrice)
 
