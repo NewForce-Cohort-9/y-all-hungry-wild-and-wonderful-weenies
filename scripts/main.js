@@ -50,12 +50,12 @@ const renderMenu = async () => {
 };
 
 // Order Summary Ticket -> acts like a shopping cart
-const renderOrderSummary = () => {
-  const orderSummaryHTML = OrderSummary();
+const renderOrderSummary = async () => {
+  const orderSummaryHTML = await OrderSummary();
   orderSummaryContainer.innerHTML = orderSummaryHTML;
 };
 
-const renderOrderConfirmation = async () => {
+const renderModal = async () => {
   modalContainer.innerHTML = await OrderConfirmation();
 };
 
@@ -78,7 +78,7 @@ renderMenu();
 renderHotdogDropDown();
 fetchAndSetArrState();
 renderOrderSummary();
-await renderOrderConfirmation();
+renderModal();
 
 //re-render location header when a location selection is made
 document.addEventListener("locationStateChange", () => {
