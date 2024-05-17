@@ -1,13 +1,12 @@
 // HOTDOG MENU CARD! => https://getbootstrap.com/docs/5.3/components/card/#horizontal :)
 export const HotDogMenu = async () => {
-    const response = await fetch("http://localhost:8088/food")
-    const food = await response.json()
+  const response = await fetch("http://localhost:8088/food");
+  const food = await response.json();
 
-    let foodMenuHTML = "<section><h2>Hot Dogs</h2>"
+  let foodMenuHTML = "<section><h2>Hot Dogs</h2>";
 
-    const divStringArray = await food.map(
-        (food) => {
-          return `<div class="card mb-3" style="max-width: 540px;">
+  const divStringArray = await food.map((food) => {
+    return `<div class="card mb-3" style="max-width: 540px;">
           <div class="row g-0">
             <div class="col-md-4">
                 <img class="img-fluid rounded-start" style="width: 200px; height: 200px;" alt="..." src='${food.image}'>
@@ -20,27 +19,24 @@ export const HotDogMenu = async () => {
                         </div>
                     </div>
                 </div>
-            </div>`
-        }
-    )
+            </div>`;
+  });
 
-    foodMenuHTML += divStringArray.join("")
-    foodMenuHTML += `</section>`
+  foodMenuHTML += divStringArray.join("");
+  foodMenuHTML += `</section>`;
 
-    return foodMenuHTML
-
-}
+  return foodMenuHTML;
+};
 
 // DRINK MENU CARD!
 export const DrinkMenu = async () => {
-    const response = await fetch("http://localhost:8088/drinks")
-    const drinks = await response.json()
+  const response = await fetch("http://localhost:8088/drinks");
+  const drinks = await response.json();
 
-    let drinkMenuHTML = "<section><h2>Drinks</h2>"
+  let drinkMenuHTML = "<section><h2>Drinks</h2>";
 
-    const divStringArray = await drinks.map(
-        (drink) => {
-          return `<div class="card mb-3" style="max-width: 540px;">
+  const divStringArray = await drinks.map((drink) => {
+    return `<div class="card mb-3" style="max-width: 540px;">
           <div class="row g-0">
             <div class="col-md-4">
                 <img class="img-fluid rounded-start" style="width: 200px; height: 200px;" alt="..." src='${drink.image}'>
@@ -53,27 +49,24 @@ export const DrinkMenu = async () => {
                         </div>
                     </div>
                 </div>
-            </div>`
-        }
-    )
+            </div>`;
+  });
 
-    drinkMenuHTML += divStringArray.join("")
-    drinkMenuHTML += `</section>`
+  drinkMenuHTML += divStringArray.join("");
+  drinkMenuHTML += `</section>`;
 
-    return drinkMenuHTML
-
-}
+  return drinkMenuHTML;
+};
 
 // DESSERT MENU CARD!
 export const DessertMenu = async () => {
-    const response = await fetch("http://localhost:8088/desserts")
-    const desserts = await response.json()
+  const response = await fetch("http://localhost:8088/desserts");
+  const desserts = await response.json();
 
-    let dessertMenuHTML = "<section><h2>Desserts</h2>"
+  let dessertMenuHTML = "<section><h2>Desserts</h2>";
 
-    const divStringArray = await desserts.map(
-        (dessert) => {
-          return `<div class="card mb-3" style="max-width: 540px;">
+  const divStringArray = await desserts.map((dessert) => {
+    return `<div class="card mb-3" style="max-width: 540px;">
           <div class="row g-0">
             <div class="col-md-4">
                 <img class="img-fluid rounded-start" style="width: 200px; height: 200px;" alt="..." src='${dessert.image}'>
@@ -86,13 +79,11 @@ export const DessertMenu = async () => {
                         </div>
                     </div>
                 </div>
-            </div>`
-        }
-    )
+            </div>`;
+  });
 
-    dessertMenuHTML += divStringArray.join("")
-    dessertMenuHTML += `</section>`
+  dessertMenuHTML += divStringArray.join("");
+  dessertMenuHTML += `</section>`;
 
-    return dessertMenuHTML
-
-}
+  return dessertMenuHTML;
+};

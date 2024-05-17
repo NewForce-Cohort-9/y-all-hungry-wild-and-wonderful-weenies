@@ -125,12 +125,19 @@ export const fetchAllLocationItems = async () => {
 };
 
 export const saveOrder = async () => {
+  const propertiesToSend = {
+    foodId: transientState.foodId,
+    locationId: transientState.locationId,
+    drinkId: transientState.drinkId,
+    dessertId: transientState.dessertId,
+  };
+
   const postOptions = {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(transientState),
+    body: JSON.stringify(propertiesToSend),
   };
   const response = await fetch("http://localhost:8088/orders", postOptions);
 
