@@ -3,7 +3,7 @@ export const HotDogMenu = async () => {
     const response = await fetch("http://localhost:8088/food")
     const food = await response.json()
 
-    let foodMenuHTML = "<section><h2>Hot Dogs</h2>"
+    let foodMenuHTML = "<section class='menuCard'><h2>Hot Dogs</h2>"
 
     const divStringArray = await food.map(
         (food) => {  
@@ -37,7 +37,7 @@ export const DrinkMenu = async () => {
     const response = await fetch("http://localhost:8088/drinks")
     const drinks = await response.json()
 
-    let drinkMenuHTML = "<section><h2>Drinks</h2>"
+    let drinkMenuHTML = "<section class='menuCard'><h2>Drinks</h2>"
 
     const divStringArray = await drinks.map(
         (drink) => {
@@ -71,7 +71,7 @@ export const DessertMenu = async () => {
     const response = await fetch("http://localhost:8088/desserts")
     const desserts = await response.json()
 
-    let dessertMenuHTML = "<section><h2>Desserts</h2>"
+    let dessertMenuHTML = "<section class='menuCardEnd'><h2>Desserts</h2>"
 
     const divStringArray = await desserts.map(
         (dessert) => {
