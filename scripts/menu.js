@@ -6,7 +6,7 @@ export const HotDogMenu = async () => {
     let foodMenuHTML = '<section class="menuCard"><h1>Dogs:</h1>'
 
     const divStringArray = await food.map(
-        (food) => {
+        (food) => {  
           return `<div class="card mb-3" style="max-width: 540px;">
           <div class="row g-0">
             <div class="col-md-4">
@@ -16,7 +16,7 @@ export const HotDogMenu = async () => {
                         <div class="card-body">
                             <h5 class="card-title">${food.name}</h5>
                             <p class="card-text">${food.description}</p>
-                            <p class="card-text">${food.price}</p>
+                            <p class="card-text">${food.price.toLocaleString("en-US", { style: "currency", currency: "USD" })}</p>
                             <aside>In Stock: QTY HERE</aside>
                         </div>
                     </div>
@@ -50,7 +50,7 @@ export const DrinkMenu = async () => {
                         <div class="card-body">
                             <h5 class="card-title">${drink.name}</h5>
                             <p class="card-text">${drink.description}</p>
-                            <p class="card-text">${drink.price}</p>
+                            <p class="card-text">${drink.price.toLocaleString("en-US", { style: "currency", currency: "USD" })}</p>
                             <aside>In Stock: QTY HERE</aside>
                         </div>
                     </div>
@@ -84,7 +84,7 @@ export const DessertMenu = async () => {
                         <div class="card-body">
                             <h5 class="card-title">${dessert.name}</h5>
                             <p class="card-text">${dessert.description}</p>
-                            <p class="card-text">${dessert.price}</p>
+                            <p class="card-text">${dessert.price.toLocaleString("en-US", { style: "currency", currency: "USD" })}</p>
                             <aside>In Stock: QTY HERE</aside>
                         </div>
                     </div>
