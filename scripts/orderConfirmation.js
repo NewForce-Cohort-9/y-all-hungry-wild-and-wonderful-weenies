@@ -18,16 +18,14 @@ export const OrderConfirmation = async () => {
             <div class="modal-content">
               <div class="modal-header">
                 <div class="text-center">
-                    <img src="images/logo.png" class="rounded mx-auto d-block" alt="Wild and Wonderful Weenies Logo">
+                    <img src="images/logo.png" class="img-thumbnail" alt="Wild and Wonderful Weenies Logo">
                 </div>
                 <h3 class="modal-title">Wild & Wonderful Weenies</h3>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
                 <div class="modal-body">
-                    <h5 class="fw-bold">>THANK YOU FOR YOUR PURCHASE!</h5>
-                    <span class="p-3 bg-info bg-opacity-10 border border-info border-start-0 rounded">
-                        <p class="fw-medium">ORDER #${latestOrder.id}</p>
-                    </span
+                    <h5 class="fw-bold">THANK YOU FOR YOUR PURCHASE!</h5>
+                    <p class="fw-medium">ORDER #${latestOrder.id}</p>
                     <p class="fw-light">Total Price: ${formattedPrice}</p>
                 </div>
               <div class="modal-footer">
