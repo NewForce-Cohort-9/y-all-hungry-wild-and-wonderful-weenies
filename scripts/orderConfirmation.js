@@ -1,4 +1,4 @@
-// ORDER POPUP MODULE CARD! => https://getbootstrap.com/docs/5.3/components/modal/#modal-components :)
+// ORDER POPUP MODAL CARD! => https://getbootstrap.com/docs/5.3/components/modal/#modal-components :)
 export const OrderConfirmation = async () => {
     const submitedOrders = await fetch("http://localhost:8088/orders?_expand=food&_expand=drinks&_expand=desserts");
     const orders = await submitedOrders.json();
