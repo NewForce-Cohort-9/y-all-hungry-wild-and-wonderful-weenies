@@ -1,20 +1,27 @@
 // ORDER POPUP MODULE CARD! => https://getbootstrap.com/docs/5.3/components/modal/#modal-components :)
+
 export const OrderConfirmation = async () => {
-    const submitedOrders = await fetch("http://localhost:8088/orders?_expand=food&_expand=drinks&_expand=desserts");
-    const orders = await submitedOrders.json();
+  const submitedOrders = await fetch(
+    "http://localhost:8088/orders?_expand=food&_expand=drinks&_expand=desserts"
+  );
+  const orders = await submitedOrders.json();
 
-    let OrderConfirmationPopupHTML = "<section>"
+  let OrderConfirmationPopupHTML = "<section>";
 
-    const divStringArray = await orders.map(
-        (order) => {
-            const WITH_SALES_TAX = 1.06;
+  const divStringArray = await orders.map((order) => {
+    const WITH_SALES_TAX = 1.06;
 
-            const orderPrice = order?.food?.price + order?.drinks?.price + order?.desserts?.price * WITH_SALES_TAX
+    const orderPrice =
+      order?.food?.price +
+      order?.drinks?.price +
+      order?.desserts?.price * WITH_SALES_TAX;
 
-            const formattedPrice = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(orderPrice)
+    const formattedPrice = new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+    }).format(orderPrice);
 
-            
-          return `<div class="modal" tabindex="-1">
+    return `<div id="order-confirmation" class="modal hide-modal" tabindex="-1">
           <div class="modal-dialog modal-dialog-centered">>
             <div class="modal-content">
               <div class="modal-header">
@@ -38,13 +45,17 @@ export const OrderConfirmation = async () => {
               </div>
             </div>
           </div>
-        </div>`
-        }
-    )
+        </div>`;
+  });
 
-    OrderConfirmationPopupHTML += divStringArray.join("")
-    OrderConfirmationPopupHTML += `</section>`
+  OrderConfirmationPopupHTML += divStringArray.join("");
+  OrderConfirmationPopupHTML += `</section>`;
 
-    return OrderConfirmationPopupHTML
+  return OrderConfirmationPopupHTML;
+};
 
-}
+// export const OrderConfirmation = async () => {
+//   return `
+//   <div class="modal hide-modal" id="order-confirmation"></div>
+//   `;
+// };
