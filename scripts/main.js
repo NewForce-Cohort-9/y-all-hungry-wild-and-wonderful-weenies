@@ -52,6 +52,7 @@ const renderOrderSummary = async () => {
   orderSummaryContainer.innerHTML = orderSummaryHTML;
 };
 
+//get initial data from database and store them in state arrays
 const fetchAndSetArrState = async () => {
   await fetchAllLocationItems();
   const allItems = await fetchMenuItems();
@@ -71,12 +72,18 @@ renderHotdogDropDown();
 fetchAndSetArrState();
 renderOrderSummary();
 
+//re-render location header when a location selection is made
 document.addEventListener("locationStateChange", () => {
   renderLocationHeader();
 });
 
+//re-render components after an item changes in order to update dropdown lists
 document.addEventListener("itemsChange", () => {
   renderHotdogDropDown();
+});
+
+document.addEventListener("cartUpdate", () => {
+  renderOrderSummary();
 });
 
 locationContainer.innerHTML = LocationSelector();

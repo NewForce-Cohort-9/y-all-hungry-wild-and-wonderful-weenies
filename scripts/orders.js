@@ -1,53 +1,87 @@
 import { saveWeenieOrder } from "./placeOrder.js";
-import { transientState, cart } from "./transientState.js";
+import { transientState, menuItemsState } from "./transientState.js";
 
 export const OrderSummary = async () => {
-        const foodResponse = await fetch("http://localhost:8088/food");
-        const drinkResponse = await fetch("http://localhost:8088/drinks");
-        const dessertResponse = await fetch("http://localhost:8088/desserts");
-    
-        const items = {
-          allFood: await foodResponse.json(),
-          allDrinks: await drinkResponse.json(),
-          allDessert: await dessertResponse.json(),
-        };
-    
-        // finding the menu item names
-        const selectedFoodName = 
-            items.allFood.find((item) => item.name === transientState.foodId)
+  const WITH_SALES_TAX = 1.06;
+  //destructure menu arrays from menuItemsState object
+  const { allFood, allDrinks, allDessert } = menuItemsState;
 
-        const selectedDrinkName = 
-            items.allDrinks.find((item) => item.name === transientState.drinkId)
-        
-        const selectedDessertName = 
-            items.allDessert.find((item) => item.name === transientState.dessertId)
+  //find the menu item names where id matches selection from state
+  const selectedFood = allFood.find(
+    (item) => item.id === transientState.foodId
+  );
+  const selectedDrink = allDrinks.find(
+    (item) => item.id === transientState.drinkId
+  );
+  const selectedDessert = allDessert.find(
+    (item) => item.id === transientState.dessertId
+  );
 
+  //make a new number array from the price property of each selected item.
+  //if the item isnt undefined (undefined cause not selected yet), use the price, otherwise use 0.
+  //reduce to sum the totals up.
+  const totalPrice = [
+    selectedFood ? selectedFood.price : 0,
+    selectedDrink ? selectedDrink.price : 0,
+    selectedDessert ? selectedDessert.price : 0,
+  ].reduce((prev, curr) => prev + curr, 0);
 
-    let orderSummaryHTML = "<section>"
-        // what's being mapped needs revisited -> possibly what's in cart?
-        // NEED TO ADD A SUM OF PRICE FUNCTION
-    const divStringArray = await items.map(
-        (order) => {
-          return `<div class="card" style="width: 18rem;">
+  const totalPriceWithTax = totalPrice * WITH_SALES_TAX;
+
+  return `<section><div class="card" style="width: 18rem;">
           <div class="card-header">
             Wild & Wonderful Wennie Order Includes:
           </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">${order.selectedFoodName}</li>
-                    <li class="list-group-item">${order.selectedDrinkName}</li>
-                    <li class="list-group-item">${order.selectedDessertName}</li>
+                        <li class="list-group-item justify-content-between d-flex">
+                        <span>
+                        ${
+                          selectedFood
+                            ? selectedFood.name
+                            : "Select a food item"
+                        } </span> 
+                        <span>
+                        ${selectedFood ? selectedFood.price.toFixed(2) : "0.00"}
+                        </span>
+                        </li>
+
+                        <li class="list-group-item justify-content-between d-flex">
+                        <span> 
+                        ${selectedDrink ? selectedDrink.name : "Select a drink"}
+                        </span> 
+                        <span>
+                        ${
+                          selectedDrink
+                            ? selectedDrink.price.toFixed(2)
+                            : "0.00"
+                        }
+                        </span>
+                        </li>
+
+                         <li class="list-group-item justify-content-between d-flex">
+                        <span> 
+                        ${
+                          selectedDessert
+                            ? selectedDessert.name
+                            : "Select a drink"
+                        }
+                        </span> 
+                        <span>
+                        ${
+                          selectedDessert
+                            ? selectedDessert.price.toFixed(2)
+                            : "0.00"
+                        }
+                        </span>
+                        </li>
                 </ul>
+        
           <div class="card-footer">
+          <p>Total price: ${totalPriceWithTax.toFixed(2)} w/ tax</p>
           <!-- button -->
-          ${saveWeenieOrder}
+          ${saveWeenieOrder()}
           </div>
-        </div>`
-        }
-    )
-
-    orderSummaryHTML += divStringArray.join("")
-    orderSummaryHTML += `</section>`
-
-    return orderSummaryHTML
-
-}
+        </div>
+        </section>
+        `;
+};
