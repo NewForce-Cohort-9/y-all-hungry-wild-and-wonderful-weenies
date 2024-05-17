@@ -30,7 +30,7 @@ export const OrderSummary = async () => {
 
   return `<section><div class="card" style="width: 30em;">
           <div class="card-header">
-            Wild & Wonderful Weenie Order Includes:
+            <h4>Wild & Wonderful Weenie Order Includes:</h4>
           </div>
                 <ul class="list-group list-group-flush">
                         <li class="list-group-item justify-content-between d-flex">
