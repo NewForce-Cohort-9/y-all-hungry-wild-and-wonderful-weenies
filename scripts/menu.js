@@ -71,7 +71,7 @@ export const DessertMenu = async () => {
     const response = await fetch("http://localhost:8088/desserts")
     const desserts = await response.json()
 
-    let dessertMenuHTML = "<section class='menuCardEnd'><h2>Desserts</h2>"
+    let dessertMenuHTML = "<section class='menuCardEnd'><h2>Shakes</h2>"
 
     const divStringArray = await desserts.map(
         (dessert) => {
