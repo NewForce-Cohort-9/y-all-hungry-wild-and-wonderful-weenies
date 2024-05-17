@@ -1,8 +1,11 @@
 import { setDessert } from "./transientState.js";
 
+const cartUpdate = new CustomEvent("cartUpdate");
+
 const handleDessertChoice = (changeEvent) => {
   if (changeEvent.target.id === "desserts") {
     setDessert(parseInt(changeEvent.target.value));
+    document.dispatchEvent(cartUpdate);
   }
 };
 
