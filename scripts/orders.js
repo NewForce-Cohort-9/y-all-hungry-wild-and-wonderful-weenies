@@ -30,7 +30,7 @@ export const OrderSummary = () => {
 
   return `<section><div class="card" style="width: 18rem;">
           <div class="card-header">
-            Wild & Wonderful Wennie Order Includes:
+            Wild & Wonderful Weenie Order Includes:
           </div>
                 <ul class="list-group list-group-flush">
                         <li class="list-group-item justify-content-between d-flex">
