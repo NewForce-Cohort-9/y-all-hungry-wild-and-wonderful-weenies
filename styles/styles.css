@@ -9,3 +9,87 @@ body {
   --lightBlue: #375f73;
   --middleBlue: #083c55;
 }
+@import url('https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap');
+
+body {
+  margin: 0;
+  background: var(--primary);
+}
+
+.navbar.custom-nav {
+  background-color: var(--middleBlue);
+}
+
+:root {
+  --primary: #172934;
+  --secondary: #f1bf17;
+  --lightYellow: #ffe797;
+  --lightBlue: #375f73;
+  --middleBlue: #083c55;
+}
+
+div.logo {
+  padding-bottom: 1rem;
+  width: 150px; 
+  height: auto; 
+  font-family: "Finger Paint", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 60px;
+  color: var(--secondary);
+
+}
+
+div.logo img {
+  margin-left: 1.25rem;
+  max-width: 100%;
+  max-height: 100%;
+  border: 5px solid var(--secondary);
+}
+
+.location, .food, .drink, .dessert {
+  margin: 0 0 0 1rem;
+}
+
+.selections {
+  margin-left: 1rem;
+}
+
+.navbar-brand {
+  width: 100%;
+}
+
+aside {
+  font-family: "Finger Paint", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: medium;
+  text-align: right;
+}
+
+.location-header-box-box {
+display: flex;
+justify-content: center;
+}
+
+#location-header-box {
+  font-family: "Finger Paint", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 60px;
+  margin: .5em;
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: var(--middleBlue);
+  width: fit-content;
+}
+
+/* Add styles for the menu section headers */
+section h2 {
+  font-family: "Finger Paint", sans-serif;
+  font-size: 24px;
+  color: #f1bf17;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 10px;
+}
