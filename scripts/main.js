@@ -94,6 +94,10 @@ document.addEventListener("cartUpdate", () => {
   renderOrderSummary();
 });
 
+document.addEventListener("priceChange", () => {
+  renderModal();
+});
+
 locationContainer.innerHTML = LocationSelector();
 drinkContainer.innerHTML = await DrinkSelector();
 dessertContainer.innerHTML = await DessertDropdown();

@@ -5,6 +5,8 @@ import {
   setOrderPrice,
 } from "./transientState.js";
 
+const priceChange = new CustomEvent("priceChange");
+
 export const OrderSummary = () => {
   const WITH_SALES_TAX = 1.06;
   //destructure menu arrays from menuItemsState object
@@ -31,6 +33,9 @@ export const OrderSummary = () => {
   ].reduce((prev, curr) => prev + curr, 0);
 
   const totalPriceWithTax = totalPrice * WITH_SALES_TAX;
+
+  setOrderPrice(totalPriceWithTax);
+  document.dispatchEvent(priceChange);
 
   return `<section><div class="card" style="width: 30em;">
           <div class="card-header">
