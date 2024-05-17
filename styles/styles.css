@@ -90,3 +90,14 @@ h1 {
 .menuCardEnd {
   padding-left: 1em;
 }
+
+.itemFlex {
+  display: flex;
+  justify-content: space-between;
+}
+
+div.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
