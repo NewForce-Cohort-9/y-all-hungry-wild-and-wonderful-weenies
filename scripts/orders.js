@@ -1,5 +1,9 @@
 import { saveWeenieOrder } from "./placeOrder.js";
-import { transientState, menuItemsState } from "./transientState.js";
+import {
+  transientState,
+  menuItemsState,
+  setOrderPrice,
+} from "./transientState.js";
 
 export const OrderSummary = () => {
   const WITH_SALES_TAX = 1.06;
@@ -27,6 +31,8 @@ export const OrderSummary = () => {
   ].reduce((prev, curr) => prev + curr, 0);
 
   const totalPriceWithTax = totalPrice * WITH_SALES_TAX;
+
+  setOrderPrice(totalPriceWithTax);
 
   return `<section><div class="card" style="width: 18rem;">
           <div class="card-header">

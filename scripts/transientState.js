@@ -10,6 +10,7 @@ export const transientState = {
   hotdogs: [],
   drinks: [],
   dessert: [],
+  orderPrice: 0,
 };
 
 export const locationItemsState = {
@@ -25,6 +26,10 @@ export const menuItemsState = {
 };
 
 const orderSent = new CustomEvent("orderSent");
+
+export const setOrderPrice = (price) => {
+  transientState.orderPrice = price;
+};
 
 export const setTransientHotdog = (updatedArr) => {
   transientState.hotdogs = updatedArr;
