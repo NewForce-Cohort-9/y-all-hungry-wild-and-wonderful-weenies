@@ -3,6 +3,7 @@ import { setFood, transientState } from "./transientState.js";
 const handleHotDogChoice = (changeEvent) => {
   if (changeEvent.target.id === "hotdogs") {
     setFood(parseInt(changeEvent.target.value));
+    document.dispatchEvent(cartUpdate);
   }
 };
 

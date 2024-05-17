@@ -82,6 +82,10 @@ document.addEventListener("itemsChange", () => {
   renderHotdogDropDown();
 });
 
+document.addEventListener("cartUpdate", () => {
+  renderOrderSummary();
+});
+
 locationContainer.innerHTML = LocationSelector();
 drinkContainer.innerHTML = await DrinkSelector();
 dessertContainer.innerHTML = await DessertDropdown();

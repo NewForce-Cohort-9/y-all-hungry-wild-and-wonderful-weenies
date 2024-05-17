@@ -1,5 +1,7 @@
 import { setDrink } from "./transientState.js";
 
+const cartUpdate = new CustomEvent("cartUpdate");
+
 export const DrinkSelector = async () => {
   const response = await fetch("http://localhost:8088/drinks");
   const drinks = await response.json();
@@ -21,5 +23,6 @@ const changeHandler = (changeEvent) => {
   if (changeEvent.target.id === "drink") {
     const chosenOption = changeEvent.target.value;
     setDrink(parseInt(chosenOption));
+    document.dispatchEvent(cartUpdate);
   }
 };
