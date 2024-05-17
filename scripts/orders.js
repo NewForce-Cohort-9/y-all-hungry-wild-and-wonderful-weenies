@@ -28,7 +28,7 @@ export const OrderSummary = async () => {
 
   const totalPriceWithTax = totalPrice * WITH_SALES_TAX;
 
-  return `<section><div class="card" style="width: 18rem;">
+  return `<section><div class="card" style="width: 30em;">
           <div class="card-header">
             Wild & Wonderful Wennie Order Includes:
           </div>
