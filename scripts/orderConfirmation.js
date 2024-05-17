@@ -31,7 +31,7 @@ export const OrderConfirmation = async () => {
                 </div>
               <div class="modal-footer">
                 <div class="d-grid gap-2 col-6 mx-auto">
-                    <button class="btn btn-primary" type="button">START NEW ORDER</button>
+                    <button class="btn btn-primary" type="button" data-bs-dismiss="modal" aria-label="Close">START NEW ORDER</button>
                 </div>
               </div>
             </div>
