@@ -63,7 +63,7 @@ export const OrderSummary = async () => {
                         ${
                           selectedDessert
                             ? selectedDessert.name
-                            : "Select a drink"
+                            : "Select a dessert"
                         }
                         </span> 
                         <span>
