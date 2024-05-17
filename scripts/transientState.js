@@ -24,12 +24,7 @@ export const menuItemsState = {
   allDessert: [],
 };
 
-// order summary ticket "shopping cart"
-export const cart = {
-  food: [],
-  drinks: [],
-  dessert: [],
-}
+const orderSent = new CustomEvent("orderSent");
 
 export const setTransientHotdog = (updatedArr) => {
   transientState.hotdogs = updatedArr;
@@ -140,7 +135,7 @@ export const saveOrder = async () => {
   const response = await fetch("http://localhost:8088/orders", postOptions);
 
   if (response.ok) {
-    document.dispatchEvent(customEvent);
+    document.dispatchEvent(orderSent);
     resetAllState();
   }
 };

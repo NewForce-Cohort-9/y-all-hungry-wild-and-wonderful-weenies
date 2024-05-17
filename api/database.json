@@ -118,42 +118,41 @@
   ],
   "desserts": [
     {
-        "id": 1,
-        "name": "Chocolate",
-        "price": 5.99,
-        "image": "https://cdn.pixabay.com/photo/2015/11/23/11/54/chocolate-smoothie-1058191_1280.jpg",
-        "description": "A classic chocolate shake made with our patented lab-grown cacao beans!"
-      },
-      {
-        "id": 2,
-        "name": "Artificial Vanilla",
-        "price": 5.99,
-        "image": "https://img.freepik.com/free-photo/tasty-milkshake-drink-with-straw_144627-42401.jpg",
-        "description": "A crowd favorite based on the old fashioned vanilla shakes of olde."
-      },
-      {
-        "id": 3,
-        "name": "Strawberry",
-        "price": 5.99,
-        "image": "https://img.freepik.com/free-photo/high-angle-strawberry-milkshake_23-2148707844.jpg",
-        "description": "This neon pink top pick almost tastes like real strawberries!"
-      },
-      {
-        "id": 4,
-        "name": "Banana Pudding",
-        "price": 7.29,
-        "image": "https://cdn.pixabay.com/photo/2024/02/15/18/51/ai-generated-8575921_1280.jpg",
-        "description": "Mindlessly absorb the delicious flavor of banana pudding your Mamaw makes, now with a new and improved fully liquid recipe to remove the need for chewing!"
-      },
-      {
-        "id": 5,
-        "name": "Toffee Chunk",
-        "price": 7.29,
-        "image": "https://img.freepik.com/free-photo/glass-chocolate-shake-table_23-2148922866.jpg",
-        "description": "Chunks of speciality dehydrated toffee chunks swirled into our famous Artificial Vanilla base."
-      }
-    ],
-  
+      "id": 1,
+      "name": "Chocolate",
+      "price": 5.99,
+      "image": "https://cdn.pixabay.com/photo/2015/11/23/11/54/chocolate-smoothie-1058191_1280.jpg",
+      "description": "A classic chocolate shake made with our patented lab-grown cacao beans!"
+    },
+    {
+      "id": 2,
+      "name": "Artificial Vanilla",
+      "price": 5.99,
+      "image": "https://img.freepik.com/free-photo/tasty-milkshake-drink-with-straw_144627-42401.jpg",
+      "description": "A crowd favorite based on the old fashioned vanilla shakes of olde."
+    },
+    {
+      "id": 3,
+      "name": "Strawberry",
+      "price": 5.99,
+      "image": "https://img.freepik.com/free-photo/high-angle-strawberry-milkshake_23-2148707844.jpg",
+      "description": "This neon pink top pick almost tastes like real strawberries!"
+    },
+    {
+      "id": 4,
+      "name": "Banana Pudding",
+      "price": 7.29,
+      "image": "https://cdn.pixabay.com/photo/2024/02/15/18/51/ai-generated-8575921_1280.jpg",
+      "description": "Mindlessly absorb the delicious flavor of banana pudding your Mamaw makes, now with a new and improved fully liquid recipe to remove the need for chewing!"
+    },
+    {
+      "id": 5,
+      "name": "Toffee Chunk",
+      "price": 7.29,
+      "image": "https://img.freepik.com/free-photo/glass-chocolate-shake-table_23-2148922866.jpg",
+      "description": "Chunks of speciality dehydrated toffee chunks swirled into our famous Artificial Vanilla base."
+    }
+  ],
   "locationDrinks": [
     {
       "id": 1,
@@ -185,7 +184,6 @@
       "drinkId": 5,
       "drinkQty": 999
     },
-
     {
       "id": 6,
       "locationId": 2,
@@ -430,7 +428,6 @@
       "hotDogId": 5,
       "hotDogQty": 999
     },
-
     {
       "id": 6,
       "locationId": 2,
