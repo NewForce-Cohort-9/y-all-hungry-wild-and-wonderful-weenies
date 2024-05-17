@@ -25,9 +25,11 @@ export const OrderConfirmation = async () => {
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
                 <div class="modal-body">
-                    <h5 class="card-title">THANK YOU FOR YOUR PURCHASE!</h5>
-                    <p class="card-text"><strong>ORDER #${order.id}</strong></p>
-                    <p class="card-text">Total Price: ${formattedPrice}</p>
+                    <h5 class="fw-bold">>THANK YOU FOR YOUR PURCHASE!</h5>
+                    <span class="p-3 bg-info bg-opacity-10 border border-info border-start-0 rounded">
+                        <p class="fw-medium">ORDER #${order.id}</p>
+                    </span
+                    <p class="fw-light">Total Price: ${formattedPrice}</p>
                 </div>
               <div class="modal-footer">
                 <div class="d-grid gap-2 col-6 mx-auto">
