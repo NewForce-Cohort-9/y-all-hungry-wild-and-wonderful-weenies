@@ -110,3 +110,8 @@ section h2 {
 .order {
   padding-top: 4em;
 }
+
+.center {
+  display: flex;
+  justify-content: center;
+}
