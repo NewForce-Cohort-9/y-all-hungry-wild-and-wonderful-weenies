@@ -14,7 +14,7 @@ export const OrderConfirmation = async () => {
   }).format(transientState.orderPrice);
 
   return `<div id="order-confirmation" class="modal hide-modal" tabindex="-1">
-          <div class="modal-dialog modal-dialog-centered">>
+          <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
               <div class="modal-header">
                 <div class="text-center">

@@ -115,3 +115,23 @@ section h2 {
   display: flex;
   justify-content: center;
 }
+
+.modal-dialog {
+  max-width: 800px !important; /* Adjust the value as per your requirement */
+  width: 40% !important; /* This sets the width as a percentage of the viewport width */
+}
+
+.modal-content {
+  width: 100% !important; /* Ensure the content fills the modal */
+  padding: 10px;
+}
+
+.img-thumbnail {
+  max-width: 25em;
+}
+
+.modal-title {
+  font-family: "Finger Paint", sans-serif;
+  color: var(--primary);
+  text-align: center;
+}
