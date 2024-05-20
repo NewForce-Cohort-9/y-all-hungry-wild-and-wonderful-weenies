@@ -2,7 +2,7 @@
   "locations": [
     {
       "id": 1,
-      "name": "4th avenue",
+      "name": "4th Avenue",
       "address": "4th Avenue and 10th street"
     },
     {
@@ -12,7 +12,7 @@
     },
     {
       "id": 3,
-      "name": "On legal public land outside of Hillbilly Hotdogs",
+      "name": "legal public land outside of Hillbilly Hotdogs",
       "address": "4650 US Route 2"
     },
     {

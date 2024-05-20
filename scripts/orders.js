@@ -87,8 +87,10 @@ export const OrderSummary = () => {
         
           <div class="card-footer">
           <p>Total price: ${totalPriceWithTax.toFixed(2)} w/ tax</p>
+          <div class="center">
           <!-- button -->
           ${saveWeenieOrder()}
+          </div>
           </div>
         </div>
         </section>

@@ -12,5 +12,5 @@ const handleCustomOrderClick = async (clickEvent) => {
 export const saveWeenieOrder = () => {
   document.addEventListener("click", handleCustomOrderClick);
 
-  return `<button type="button" class="btn btn-info">SUBMIT ORDER</button>`;
+  return `<button type="button" class="btn">SUBMIT ORDER</button>`;
 };

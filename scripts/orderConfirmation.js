@@ -14,14 +14,13 @@ export const OrderConfirmation = async () => {
   }).format(transientState.orderPrice);
 
   return `<div id="order-confirmation" class="modal hide-modal" tabindex="-1">
-          <div class="modal-dialog modal-dialog-centered">>
+          <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
               <div class="modal-header">
                 <div class="text-center">
                     <img src="images/logo.png" class="img-thumbnail" alt="Wild and Wonderful Weenies Logo">
                 </div>
-                <h3 class="modal-title">Wild & Wonderful Weenies</h3>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h3 class="modal-title">Wild and Wonderful Weenies</h3>
               </div>
                 <div class="modal-body">
                     <h5 class="fw-bold">THANK YOU FOR YOUR PURCHASE!</h5>
@@ -32,7 +31,7 @@ export const OrderConfirmation = async () => {
                 </div>
               <div class="modal-footer">
                 <div class="d-grid gap-2 col-6 mx-auto">
-                    <button class="btn btn-primary" type="button" data-bs-dismiss="modal" aria-label="Close">START NEW ORDER</button>
+                    <button class="btn" type="button" data-bs-dismiss="modal" aria-label="Close">START NEW ORDER</button>
                 </div>
               </div>
             </div>
