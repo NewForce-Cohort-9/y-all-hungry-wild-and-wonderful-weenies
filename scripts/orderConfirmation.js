@@ -20,7 +20,7 @@ export const OrderConfirmation = async () => {
                 <div class="text-center">
                     <img src="images/logo.png" class="img-thumbnail" alt="Wild and Wonderful Weenies Logo">
                 </div>
-                <h3 class="modal-title">Wild & Wonderful Weenies</h3>
+                <h3 class="modal-title">Wild and Wonderful Weenies</h3>
               </div>
                 <div class="modal-body">
                     <h5 class="fw-bold">THANK YOU FOR YOUR PURCHASE!</h5>
