@@ -111,3 +111,8 @@ section h2 {
 .show-modal {
   display: block;
 }
+
+.btn {
+  background-color: var(--secondary);
+  color: var(--primary);
+}
