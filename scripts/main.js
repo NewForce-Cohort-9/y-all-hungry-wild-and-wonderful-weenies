@@ -83,6 +83,7 @@ renderModal();
 //re-render location header when a location selection is made
 document.addEventListener("locationStateChange", () => {
   renderLocationHeader();
+  renderMenu();
 });
 
 //re-render components after an item changes in order to update dropdown lists

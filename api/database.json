@@ -158,7 +158,7 @@
       "id": 1,
       "locationId": 1,
       "drinkId": 1,
-      "drinkQty": 999
+      "drinkQty": 910
     },
     {
       "id": 2,
@@ -266,13 +266,13 @@
       "id": 9,
       "locationId": 4,
       "drinkId": 4,
-      "drinkQty": 999
+      "drinkQty": 80
     },
     {
       "id": 20,
       "locationId": 4,
       "drinkId": 5,
-      "drinkQty": 999
+      "drinkQty": 90
     }
   ],
   "locationDesserts": [
@@ -280,7 +280,7 @@
       "id": 1,
       "locationId": 1,
       "dessertId": 1,
-      "dessertQty": 999
+      "dessertQty": 90
     },
     {
       "id": 2,
@@ -292,7 +292,7 @@
       "id": 3,
       "locationId": 1,
       "dessertId": 3,
-      "dessertQty": 999
+      "dessertQty": 80
     },
     {
       "id": 4,

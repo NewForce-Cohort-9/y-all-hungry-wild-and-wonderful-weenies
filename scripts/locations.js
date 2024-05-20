@@ -8,8 +8,6 @@ import {
   setTransientDesserts,
 } from "./transientState.js";
 
-//TODO - finish styling
-
 const locationStateChange = new CustomEvent("locationStateChange");
 const menuItemArrayChange = new CustomEvent("itemsChange");
 
@@ -28,7 +26,7 @@ export const getLocations = async () => {
 
 //in the location arrays (locationDrinks, etc), return only the ones where the...
 //...drinkId, foodId, etc match the full food, drinks, desserts arrays
-const filterByItemId = (allItemsArr, onlyInStockArr, menuPropertyId) => {
+export const filterByItemId = (allItemsArr, onlyInStockArr, menuPropertyId) => {
   const matchingItemArr = allItemsArr.filter((item) =>
     onlyInStockArr.some((itemTwo) => itemTwo[menuPropertyId] === item.id)
   );

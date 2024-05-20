@@ -25,7 +25,9 @@ export const OrderConfirmation = async () => {
               </div>
                 <div class="modal-body">
                     <h5 class="fw-bold">THANK YOU FOR YOUR PURCHASE!</h5>
-                    <p class="fw-medium">ORDER #${latestOrder.id}</p>
+                    <p class="fw-medium">ORDER #${
+                      latestOrder ? latestOrder.id : 0
+                    }</p>
                     <p class="fw-light">Total Price: ${formattedPrice}</p>
                 </div>
               <div class="modal-footer">
