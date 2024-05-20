@@ -519,20 +519,5 @@
       "hotDogQty": 999
     }
   ],
-  "orders": [
-    {
-      "foodId": 2,
-      "locationId": 2,
-      "drinkId": 2,
-      "dessertId": 1,
-      "id": 1
-    },
-    {
-      "foodId": 0,
-      "locationId": 0,
-      "drinkId": 0,
-      "dessertId": 0,
-      "id": 2
-    }
-  ]
+  "orders": []
 }
