@@ -137,11 +137,11 @@ export const DessertMenu = async () => {
   const desserts = await response.json();
 
   const { dessertWithQty } = await getItemQuantitys();
-  const drinkArr = transientState.locationId ? dessertWithQty : desserts;
+  const dessertArr = transientState.locationId ? dessertWithQty : desserts;
 
   let dessertMenuHTML = "<section class='menuCardEnd'><h2>Shakes</h2>";
 
-  const divStringArray = drinkArr.map((dessert) => {
+  const divStringArray = dessertArr.map((dessert) => {
     return `<div class="card mb-3" style="max-width: 540px;">
           <div class="row g-0">
             <div class="col-md-4">
