@@ -74,24 +74,14 @@ aside {
   background-color: var(--middleBlue);
   width: fit-content;
 }
-.menuCard {
-  padding-left: 1em;
-  padding-bottom: 2em;
-}
 
-.menuCardEnd {
-  padding-left: 1em;
+.menuCard {
+  padding-bottom: 2em;
 }
 
 .itemFlex {
   display: flex;
   justify-content: space-between;
-}
-
-div.sticky {
-  position: sticky;
-  top: 0;
-  z-index: 999;
 }
 
 /* Add styles for the menu section headers */
@@ -115,4 +105,8 @@ section h2 {
 .btn {
   background-color: var(--secondary);
   color: var(--primary);
+}
+
+.order {
+  padding-top: 4em;
 }
